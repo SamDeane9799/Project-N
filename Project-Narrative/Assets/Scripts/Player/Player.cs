@@ -39,7 +39,15 @@ public class Player : MonoBehaviour
             interactUI.SetActive(inNPC);
             if (inNPC)
             {
-                interactUI.transform.GetChild(0).GetComponent<Text>().text = "Talk to " + potentialNPC.GetName();
+                potentialNPC.RotateTowards(transform);
+                if(potentialNPC.GetHasDialogue())
+                {
+
+                }
+                else
+                {
+                    interactUI.transform.GetChild(0).GetComponent<Text>().text = "Talk to " + potentialNPC.GetName();
+                }
             }
 
         }
