@@ -143,6 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Derrick
   turnSpeed: 5
+  interactionBoxRadius: 25
 --- !u!1 &6431247604072200648
 GameObject:
   m_ObjectHideFlags: 0

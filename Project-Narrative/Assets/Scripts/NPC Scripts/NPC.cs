@@ -8,6 +8,9 @@ public class NPC : MonoBehaviour
     private string name;
     [SerializeField]
     private float turnSpeed;
+    private float baseTurnSpeed;
+    [SerializeField]
+    private float interactionBoxRadius;
 
     private bool hasDialogue;
     private bool lookingAtPlayer;
@@ -23,7 +26,13 @@ public class NPC : MonoBehaviour
     {
         SphereCollider trigger = gameObject.AddComponent<SphereCollider>();
         trigger.isTrigger = true;
-        trigger.radius = 25;
+        if (interactionBoxRadius <= 0)
+            interactionBoxRadius = 25;
+        trigger.radius = interactionBoxRadius;
+
+        if (turnSpeed <= 0)
+            turnSpeed = 5;
+        baseTurnSpeed = turnSpeed;
     }
 
     // Update is called once per frame
@@ -33,6 +42,7 @@ public class NPC : MonoBehaviour
         {
             float step = Time.deltaTime * turnSpeed;
             positionLookingAt = GameManager.GetPlayerPosition() - transform.position;
+            turnSpeed = ((interactionBoxRadius - positionLookingAt.magnitude) / interactionBoxRadius) * baseTurnSpeed;
             Vector3 newAngle = Vector3.RotateTowards(transform.forward, positionLookingAt, step, 0.0f);
 
             transform.rotation = Quaternion.LookRotation(new Vector3(newAngle.x, 0, newAngle.z));
