@@ -6,11 +6,14 @@ public class NPC : MonoBehaviour
 {
     [SerializeField]
     private string name;
+    [SerializeField]
+    private float turnSpeed;
 
     private bool hasDialogue;
-    private bool lookingAtSomething;
+    private bool lookingAtPlayer;
 
     private Vector3 positionLookingAt;
+
 
     //Later replaced with dialogue object
     private string dialogue;
@@ -18,16 +21,21 @@ public class NPC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SphereCollider trigger = gameObject.AddComponent<SphereCollider>();
+        trigger.isTrigger = true;
+        trigger.radius = 25;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(lookingAtSomething)
+        if(lookingAtPlayer)
         {
-            transform.LookAt(new Vector3(positionLookingAt.x, transform.position.y, positionLookingAt.z));
-            transform.GetChild(0).transform.LookAt(positionLookingAt);
+            float step = Time.deltaTime * turnSpeed;
+            positionLookingAt = GameManager.GetPlayerPosition() - transform.position;
+            Vector3 newAngle = Vector3.RotateTowards(transform.forward, positionLookingAt, step, 0.0f);
+
+            transform.rotation = Quaternion.LookRotation(new Vector3(newAngle.x, 0, newAngle.z));
         }
     }
 
@@ -42,15 +50,13 @@ public class NPC : MonoBehaviour
 
     public void PlayerLeft()
     {
-        lookingAtSomething = false;
+        lookingAtPlayer = false;
     }
 
     public void RotateTowards(Transform toLookTowards)
     {
-        lookingAtSomething = true;
-        positionLookingAt = toLookTowards.position;
-        transform.LookAt(new Vector3(positionLookingAt.x, transform.position.y, positionLookingAt.z));
-        transform.GetChild(0).transform.LookAt(positionLookingAt);
+        lookingAtPlayer = true;
+        positionLookingAt = toLookTowards.position - transform.position;
     }
 
 
