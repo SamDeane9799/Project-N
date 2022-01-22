@@ -42,7 +42,7 @@ public class NPC : MonoBehaviour
         {
             float step = Time.deltaTime * turnSpeed;
             positionLookingAt = GameManager.GetPlayerPosition() - transform.position;
-            turnSpeed = ((interactionBoxRadius - positionLookingAt.magnitude) / interactionBoxRadius) * baseTurnSpeed;
+            turnSpeed = (((interactionBoxRadius - positionLookingAt.magnitude) / interactionBoxRadius) * baseTurnSpeed) * 1.2f;
             Vector3 newAngle = Vector3.RotateTowards(transform.forward, positionLookingAt, step, 0.0f);
 
             transform.rotation = Quaternion.LookRotation(new Vector3(newAngle.x, 0, newAngle.z));
