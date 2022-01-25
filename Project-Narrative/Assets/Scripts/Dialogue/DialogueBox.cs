@@ -7,7 +7,7 @@ public class DialogueBox
     private Queue<Phrase> phrases;
     private PlayerResponse[] responses;
     private short[] parentIDs;
-    private List<short>[] childrenIDs;
+    private List<short> childrenIDs;
     private float entryTime;
     private short animationID;
 
@@ -22,8 +22,14 @@ public class DialogueBox
     }
 
     //Go through all our responses and add their child dialogue box to the list
-    private void GetChildrenIDs()
+    private short[] GetChildrenIDs()
     {
-
+        foreach(PlayerResponse pr in responses)
+        {
+            childrenIDs.Add(pr.GetChildID());
+        }
+        short[] IDs = new short[childrenIDs.Count];
+        childrenIDs.CopyTo(IDs);
+        return IDs;
     }
 }

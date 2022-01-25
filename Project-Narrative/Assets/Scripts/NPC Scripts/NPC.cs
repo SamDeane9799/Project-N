@@ -69,6 +69,10 @@ public class NPC : MonoBehaviour
         positionLookingAt = toLookTowards.position - transform.position;
     }
 
+    public Transform GetHeadTransform()
+    {
+        return transform.GetChild(0);
+    }
 
     public string DisplayText()
     {
