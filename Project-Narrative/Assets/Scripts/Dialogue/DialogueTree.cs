@@ -13,10 +13,6 @@ public class DialogueTree
         CalcTiers();
     }
 
-    public void SetTiers(int num)
-    {
-        tiers = num;
-    }
     public int GetTiers()
     {
         return tiers;

@@ -5,12 +5,14 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
     [SerializeField]
-    private string name;
+    private string npcName;
     [SerializeField]
     private float turnSpeed;
     private float baseTurnSpeed;
     [SerializeField]
     private float interactionBoxRadius;
+    [SerializeField]
+    private Transform headTransform;
 
     private bool hasDialogue;
     private bool lookingAtPlayer;
@@ -19,7 +21,7 @@ public class NPC : MonoBehaviour
 
 
     //Later replaced with dialogue object
-    private string dialogue;
+    private DialogueTree dialogue;
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +53,7 @@ public class NPC : MonoBehaviour
 
     public string GetName()
     {
-        return name;
+        return npcName;
     }
     public bool GetHasDialogue()
     {
@@ -71,11 +73,6 @@ public class NPC : MonoBehaviour
 
     public Transform GetHeadTransform()
     {
-        return transform.GetChild(0);
-    }
-
-    public string DisplayText()
-    {
-        return dialogue;
+        return headTransform;
     }
 }

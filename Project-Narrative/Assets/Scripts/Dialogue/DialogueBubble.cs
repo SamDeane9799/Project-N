@@ -22,9 +22,4 @@ public class DialogueBubble
         rotation = Rotation;
         exitTime = ExitTime;
     }
-
-    public void Display()
-    {
-        ConversationManager.DisplayBubble(this);
-    }
 }

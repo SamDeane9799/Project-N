@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class DialogueBox
 {
-    private Queue<Phrase> phrases;
-    private PlayerResponse[] responses;
+    public Queue<Phrase> phrases { get; }
+    public PlayerResponse[] responses { get; }
+    private short ID;
     private short[] parentIDs;
     private List<short> childrenIDs;
-    private float entryTime;
+    public float entryTime { get; }
     private short animationID;
 
-    public DialogueBox(Queue<Phrase> Phrases, PlayerResponse[] Responses, short[] ParentIDs, float EntryTime, short AnimationID)
+    public DialogueBox(short boxID, Queue<Phrase> Phrases, PlayerResponse[] Responses, short[] ParentIDs, float EntryTime, short AnimationID)
     {
+        ID = boxID;
         phrases = Phrases;
         responses = Responses;
         parentIDs = ParentIDs;
@@ -31,5 +33,12 @@ public class DialogueBox
         short[] IDs = new short[childrenIDs.Count];
         childrenIDs.CopyTo(IDs);
         return IDs;
+    }
+
+    public Phrase IncrementPhrase()
+    {
+        if (phrases.Count > 0)
+            return phrases.Dequeue();
+        return null;
     }
 }
