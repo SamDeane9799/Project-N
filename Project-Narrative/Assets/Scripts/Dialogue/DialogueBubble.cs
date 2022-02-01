@@ -10,9 +10,9 @@ public class DialogueBubble
     public int location { get; }
     public Vector3 scale { get; }
     public Vector3 rotation { get; }
-    public float exitTime { get; }
+    public float entryTime { get; }
 
-    public DialogueBubble(int BackgroundTexture, Color BackgroundColor, int TextAnimation, int Location, Vector3 Scale, Vector3 Rotation, float ExitTime)
+    public DialogueBubble(int BackgroundTexture, Color BackgroundColor, int TextAnimation, int Location, Vector3 Scale, Vector3 Rotation, float EntryTime)
     {
         backgroundTexture = BackgroundTexture;
         backgroundColor = BackgroundColor;
@@ -20,6 +20,6 @@ public class DialogueBubble
         location = Location;
         scale = Scale;
         rotation = Rotation;
-        exitTime = ExitTime;
+        entryTime = EntryTime;
     }
 }

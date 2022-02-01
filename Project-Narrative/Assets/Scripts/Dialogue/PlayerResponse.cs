@@ -3,24 +3,22 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerResponse
+public class PlayerResponse : DialogueBubble
 {
-    private Queue<DialogueBubble> bubbles;
     private int priority;
     private Trait requiredTrait;
-    private int[] isInterrupt;
+    public KeyValuePair<bool, int> isInterrupt { get; }
     private ResponseType type;
     private short childID;
 
-    public PlayerResponse(int Priority, Trait RequiredTrait, int[] IsInterrupt, ResponseType Type, int ChildID, Queue<DialogueBubble> Bubbles) 
+    public PlayerResponse(int Priority, Trait RequiredTrait, KeyValuePair<bool, int> IsInterrupt, ResponseType Type, int ChildID,
+        int BackgroundTexture, Color BackgroundColor, int TextAnimation, int Location, Vector3 Scale, Vector3 Rotation, float EntryTime)
+        : base(BackgroundTexture, BackgroundColor, TextAnimation, Location, Scale, Rotation, EntryTime)
     {
         priority = Priority;
         requiredTrait = RequiredTrait;
-        if (isInterrupt.Length != 2)
-            throw new Exception("IsInterrupt is incorrect length in PlayerResponse with childID: " + childID);
         isInterrupt = IsInterrupt;
         type = Type;
-        bubbles = Bubbles;
     }
 
     public short GetChildID()

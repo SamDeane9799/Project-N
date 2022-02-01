@@ -11,11 +11,16 @@ public class Phrase
         bubbles = Bubbles;
     }
 
-    public DialogueBubble incrementBubble()
+    public DialogueBubble IncrementBubble()
     {
         if(bubbles.Count > 0)
             return bubbles.Dequeue();
         return null;
+    }
+
+    public int GetNumOfBubbles()
+    {
+        return bubbles.Count;
     }
 
 }

@@ -9,16 +9,14 @@ public class DialogueBox
     private short ID;
     private short[] parentIDs;
     private List<short> childrenIDs;
-    public float entryTime { get; }
     private short animationID;
 
-    public DialogueBox(short boxID, Queue<Phrase> Phrases, PlayerResponse[] Responses, short[] ParentIDs, float EntryTime, short AnimationID)
+    public DialogueBox(short boxID, Queue<Phrase> Phrases, PlayerResponse[] Responses, short[] ParentIDs, short AnimationID)
     {
         ID = boxID;
         phrases = Phrases;
         responses = Responses;
         parentIDs = ParentIDs;
-        entryTime = EntryTime;
         animationID = AnimationID;
         GetChildrenIDs();
     }
@@ -40,5 +38,10 @@ public class DialogueBox
         if (phrases.Count > 0)
             return phrases.Dequeue();
         return null;
+    }
+
+    public int GetNumOfPhrases()
+    {
+        return phrases.Count;
     }
 }
