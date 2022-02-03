@@ -12,8 +12,8 @@ public class PlayerResponse : DialogueBubble
     private short childID;
 
     public PlayerResponse(int Priority, Trait RequiredTrait, KeyValuePair<bool, int> IsInterrupt, ResponseType Type, int ChildID,
-        int BackgroundTexture, Color BackgroundColor, int TextAnimation, int Location, Vector3 Scale, Vector3 Rotation, float EntryTime)
-        : base(BackgroundTexture, BackgroundColor, TextAnimation, Location, Scale, Rotation, EntryTime)
+        string Text, int BackgroundTexture, int BackgroundAnimation, Color BackgroundColor, int TextAnimation, int Location, Vector3 Scale, Vector3 Rotation, float EntryTime)
+        : base(Text, BackgroundTexture, BackgroundAnimation, BackgroundColor, TextAnimation, Location, Scale, Rotation, EntryTime)
     {
         priority = Priority;
         requiredTrait = RequiredTrait;

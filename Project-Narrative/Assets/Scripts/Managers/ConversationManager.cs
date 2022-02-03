@@ -25,6 +25,7 @@ public static class ConversationManager
     private static Phrase currentPhrase;
     private static GameObject currentBubble;
     private static List<GameObject> bubblesOnScreen;
+    private static List<PlayerResponse> responsesDisplayed;
     private static int currentPhraseIndex;
 
     private static int poolIndex;
@@ -50,6 +51,13 @@ public static class ConversationManager
         partner = Partner;
     }
 
+    public static void EndConversation()
+    {
+        partner = null;
+        inConversation = false;
+        ClearScreen();
+    }
+
     //May have to remove ref later on, I just want a constantly update reference to player during conversation :/
     //Would also be way easier in c++ :)
     public static void SetPlayer(ref Player Player)
@@ -72,7 +80,13 @@ public static class ConversationManager
         }
     }
 
-
+    public static void ChooseResponse(int num)
+    {
+        if (num > responsesDisplayed.Count)
+            return;
+        ClearScreen();
+        SetBox(DialogueFileLoader.GetDialogueBox(responsesDisplayed[num].GetChildID()));
+    }
 
 
     //MIGHT HAVE TO USE THIS IF CREATEPRIMITIVE DOESNT WORK!
@@ -101,7 +115,10 @@ public static class ConversationManager
         {
             //Detect if we've hit a phrase with an interrupt on it
             if (e.Value == currentPhraseIndex)
+            {
+                ClearScreen();
                 DisplayBubble(currentBox.responses[e.Key]);
+            }
         });
         currentPhrase = phrase;
         ClearScreen();
@@ -117,7 +134,10 @@ public static class ConversationManager
             poolIndex = 0;
         newBubble.transform.parent = partner.GetHeadTransform();
         if (bubbleInfo is PlayerResponse)
+        {
             newBubble.transform.localPosition = responsePositions[bubbleInfo.location];
+            responsesDisplayed.Add((PlayerResponse) bubbleInfo);
+        }
         else
             newBubble.transform.localPosition = positions[bubbleInfo.location];
         newBubble.transform.localScale = bubbleInfo.scale;
@@ -144,6 +164,8 @@ public static class ConversationManager
             e.transform.position = new Vector3(0, -1000, 0);
         });
         poolIndex = 0;
+        responsesDisplayed.Clear();
+        bubblesOnScreen.Clear();
     }
 
     public static void CreatePool()

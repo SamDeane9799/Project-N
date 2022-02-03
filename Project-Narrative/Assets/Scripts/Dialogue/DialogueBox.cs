@@ -9,14 +9,13 @@ public class DialogueBox
     private short ID;
     private short[] parentIDs;
     private List<short> childrenIDs;
-    private short animationID;
+    private int animationID;
 
-    public DialogueBox(short boxID, Queue<Phrase> Phrases, PlayerResponse[] Responses, short[] ParentIDs, short AnimationID)
+    public DialogueBox(short boxID, Queue<Phrase> Phrases, PlayerResponse[] Responses, int AnimationID)
     {
         ID = boxID;
         phrases = Phrases;
         responses = Responses;
-        parentIDs = ParentIDs;
         animationID = AnimationID;
         GetChildrenIDs();
     }
