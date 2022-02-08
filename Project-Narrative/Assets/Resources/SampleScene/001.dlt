@@ -1,0 +1,137 @@
+[
+    {
+        "description": "First Dialog with Derrick",
+        "id": "001"
+    },
+    {
+        "id": "001",
+        "entry_time": 3,
+        "animation": 69,
+        "responses": [
+            {
+                "priority": "10",
+                "trait": "abrasive",
+                "is_interrupt": "true,1",
+                "type": "professional",
+                "child": "002",
+                "text": "Hi",
+                "background_texture": "0",
+                "background_color": "0, 0, 0",
+                "background_animation": "0",
+                "text_animation": "0",
+                "text_color": "256, 256, 256",
+                "location": "1",
+                "scale": "1, 1, 1",
+                "rotation": "0, 0, 0",
+                "entry_time": 2
+            }
+        ],
+        "phrases": 
+        [
+            [
+                {
+                    "text": "Hi",
+                    "background_texture": "0",
+                    "background_color": "0, 0, 0",
+                    "background_animation": "0",
+                    "text_animation": "0",
+                    "text_color": "256, 256, 256",
+                    "location": "1",
+                    "scale": "1, 1, 1",
+                    "rotation": "0, 0, 0",
+                    "entry_time": 2
+                },
+                {
+                    "text": "how are you?",
+                    "background_texture": "0",
+                    "background_color": "256, 256, 256",
+                    "background_animation": "0",
+                    "text_animation": "1",
+                    "text_color": "0, 0, 0",
+                    "location": "3",
+                    "scale": ".8, .8, .8",
+                    "rotation": "30, 0, 0",
+                    "entry_time": 2
+                }
+            ],
+            [
+                {
+                    "text": "I...",
+                    "background_texture": "0",
+                    "background_color": "256, 256, 256",
+                    "background_animation": "0",
+                    "text_animation": "0",
+                    "text_color": "0, 0, 0",
+                    "location": "1",
+                    "scale": "1, 1, 1",
+                    "rotation": "0, 0, 0",
+                    "entry_time": 2
+                },
+                {
+                    "text": "Fucked your mom",
+                    "background_texture": "0",
+                    "background_color": "0, 0, 0",
+                    "background_animation": "0",
+                    "text_animation": "1",
+                    "text_color": "256, 256, 256",
+                    "location": "3",
+                    "scale": ".8, .8, .8",
+                    "rotation": "30, 0, 0",
+                    "entry_time": 2
+                    
+                }
+            ]
+        ]
+    },
+    {
+        "id": "002",
+        "animation": 1,
+        "responses": [
+            {
+                "Priority": "5",
+                "trait": "stupid",
+                "is_interrupt": "false, 0",
+                "type": "defensive",
+                "text": "Hi",
+                "background_texture": "0",
+                "background_color": "256, 256, 256",
+                "background_animation": "0",
+                "text_animation": "0",
+                "text_color": "0, 0, 0",
+                "location": "1",
+                "scale": "1, 1, 1",
+                "rotation": "0, 0, 0",
+                "entry_time": 2
+            }
+        ],
+        "phrases": 
+        [
+            [
+                {
+                    "text": "Wait...",
+                    "background_texture": "0",
+                    "background_color": "256, 256, 256",
+                    "background_animation": "0",
+                    "text_animation": "0",
+                    "text_color": "0, 0, 0",
+                    "location": "6",
+                    "scale": "1, 1, 1",
+                    "rotation": "0, 0, 0",
+                    "entry_time": 2
+                },
+                {
+                    "text": "Don't tell me it's your first day.",
+                    "background_texture": "0",
+                    "background_color": "0, 0, 0",
+                    "background_animation": "1",
+                    "text_animation": "2",
+                    "text_color": "256, 256, 256",
+                    "location": "1",
+                    "scale": "1.2, 1.2, 1",
+                    "rotation": "0, 0, 30",
+                    "entry_time": 2
+                }
+            ]
+        ]
+    }
+]

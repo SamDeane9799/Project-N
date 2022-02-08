@@ -17,6 +17,8 @@ public class NPC : MonoBehaviour
     private bool hasDialogue;
     private bool lookingAtPlayer;
 
+    public short treeID { get; }
+
     private Vector3 positionLookingAt;
 
 

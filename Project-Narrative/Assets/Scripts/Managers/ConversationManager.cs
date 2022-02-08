@@ -85,7 +85,7 @@ public static class ConversationManager
         if (num > responsesDisplayed.Count)
             return;
         ClearScreen();
-        SetBox(DialogueFileLoader.GetDialogueBox(responsesDisplayed[num].GetChildID()));
+        SetBox(DialogueFileLoader.GetDialogueTree(partner.treeID).GetDialogueBox(responsesDisplayed[num].GetChildID()));
     }
 
 
