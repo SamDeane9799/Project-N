@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
                 potentialNPC.RotateTowards(transform.GetChild(0));
                 if(potentialNPC.GetHasDialogue())
                 {
-
+                    ConversationManager.SetConversationPartners(potentialNPC);
                 }
                 else
                 {

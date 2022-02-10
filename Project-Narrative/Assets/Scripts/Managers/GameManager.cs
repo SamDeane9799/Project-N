@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     private static Player playerRef;
+    [SerializeField]
+    private GameObject textPrefab;
 
     // Start is called before the first frame update
     void Awake()
@@ -18,6 +20,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ConversationManager.IncrementTime(Time.deltaTime);
     }
 
     public static Vector3 GetPlayerPosition()
@@ -25,12 +28,14 @@ public class GameManager : MonoBehaviour
         return playerRef.transform.position;
     }
 
-    private static void OnSceneLoad(Scene scene, LoadSceneMode mode)
+    private void OnSceneLoad(Scene scene, LoadSceneMode mode)
     {
         if(scene.name == "SampleScene")
         {
             playerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
             DialogueFileLoader.LoadDialogueTrees(scene.name);
+            ConversationManager.SetTextPrefab(textPrefab);
+            ConversationManager.CreatePool();
         }
     }
 }

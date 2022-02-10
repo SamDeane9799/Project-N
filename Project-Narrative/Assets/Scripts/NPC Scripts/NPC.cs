@@ -8,22 +8,20 @@ public class NPC : MonoBehaviour
     private string npcName;
     [SerializeField]
     private float turnSpeed;
-    private float baseTurnSpeed;
     [SerializeField]
     private float interactionBoxRadius;
     [SerializeField]
     private Transform headTransform;
-
+    [SerializeField]
+    private short treeID;
+    [SerializeField]
     private bool hasDialogue;
+
+    private float baseTurnSpeed;
     private bool lookingAtPlayer;
 
-    public short treeID { get; }
 
     private Vector3 positionLookingAt;
-
-
-    //Later replaced with dialogue object
-    private DialogueTree dialogue;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +35,7 @@ public class NPC : MonoBehaviour
         if (turnSpeed <= 0)
             turnSpeed = 5;
         baseTurnSpeed = turnSpeed;
+
     }
 
     // Update is called once per frame
@@ -60,6 +59,15 @@ public class NPC : MonoBehaviour
     public bool GetHasDialogue()
     {
         return hasDialogue;
+    }
+
+    public void SetTreeID(short id)
+    {
+        treeID = id;
+    }
+    public short GetTreeID()
+    {
+        return treeID;
     }
 
     public void PlayerLeft()

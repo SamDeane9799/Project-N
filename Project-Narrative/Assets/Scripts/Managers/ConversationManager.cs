@@ -16,6 +16,10 @@ public static class ConversationManager
 {
     private static NPC partner;
     private static Player player;
+
+    private static GameObject textPrefab;
+    private static GameObject[] textObjects;
+
     //private static GameObject dialogueBubblePrefab;
     private static float currentEntryTime;
     private static float maxEntryTime;
@@ -24,23 +28,23 @@ public static class ConversationManager
     private static DialogueBox currentBox;
     private static Phrase currentPhrase;
     private static GameObject currentBubble;
-    private static List<GameObject> bubblesOnScreen;
-    private static List<PlayerResponse> responsesDisplayed;
-    private static int currentPhraseIndex;
+    private static List<GameObject> bubblesOnScreen = new List<GameObject>();
+    private static List<PlayerResponse> responsesDisplayed = new List<PlayerResponse>();
+    private static int currentPhraseIndex = -1;
 
     private static int poolIndex;
     private const int MAX_NUM_OF_POOL = 12;
     private static GameObject[] objectPool;
 
-    private static List<KeyValuePair<int, int>> interruptsOn;
+    private static List<KeyValuePair<int, int>> interruptsOn = new List<KeyValuePair<int, int>>();
 
     private static Vector3[] positions = { 
-    new Vector3(0, 1, 0), new Vector3(.75f, .5f, 0), new Vector3(1, 0, 0),
-    new Vector3(.75f, -.5f, 0),new Vector3(0, -1, 0), new Vector3(-.75f, -.5f, 0),
-    new Vector3(-1, 0, 0), new Vector3(-.75f, .5f, 0) };
+    new Vector3(0, 2, 0), new Vector3(1.5f, 1f, 0), new Vector3(2, 0, 0),
+    new Vector3(1.5f, -1f, 0),new Vector3(0, -2, 0), new Vector3(-1.5f, -1f, 0),
+    new Vector3(-2, 0, 0), new Vector3(-1.5f, 1f, 0) };
     private static Vector3[] responsePositions = {
-    new Vector3(-1, -.5f, 0), new Vector3(-1, .5f, 0),
-    new Vector3(1, .5f, 0), new Vector3(1, .5f, 0)};
+    new Vector3(-2, -1f, 0), new Vector3(-2, 1f, 0),
+    new Vector3(2, 1f, 0), new Vector3(2, 1f, 0)};
 
     public static void SetConversationPartners(NPC Partner)
     {
@@ -49,6 +53,8 @@ public static class ConversationManager
             //partner.Ignored();
         }
         partner = Partner;
+        inConversation = true;
+        SetBox(DialogueFileLoader.GetDialogueTree(partner.GetTreeID()).GetDialogueBox(001));
     }
 
     public static void EndConversation()
@@ -67,6 +73,8 @@ public static class ConversationManager
 
     public static void IncrementTime(float deltaTime)
     {
+        if (!inConversation)
+            return;
         currentEntryTime += deltaTime;
         if(currentEntryTime >= maxEntryTime && !currentBubble.activeInHierarchy)
         {
@@ -85,15 +93,20 @@ public static class ConversationManager
         if (num > responsesDisplayed.Count)
             return;
         ClearScreen();
-        SetBox(DialogueFileLoader.GetDialogueTree(partner.treeID).GetDialogueBox(responsesDisplayed[num].GetChildID()));
+        SetBox(DialogueFileLoader.GetDialogueTree(partner.GetTreeID()).GetDialogueBox(responsesDisplayed[num].GetChildID()));
     }
 
 
     //MIGHT HAVE TO USE THIS IF CREATEPRIMITIVE DOESNT WORK!
-/*    public static void SetBubblePrefab(GameObject prefab)
-    {
+    /*    public static void SetBubblePrefab(GameObject prefab)
+        {
 
-    }*/
+        }*/
+
+    public static void SetTextPrefab(GameObject prefab)
+    {
+        textPrefab = prefab;
+    }
 
     public static void SetBox(DialogueBox box)
     {
@@ -141,7 +154,10 @@ public static class ConversationManager
         else
             newBubble.transform.localPosition = positions[bubbleInfo.location];
         newBubble.transform.localScale = bubbleInfo.scale;
-        newBubble.transform.Rotate(bubbleInfo.rotation);
+        newBubble.transform.localRotation = Quaternion.Euler(bubbleInfo.rotation.x - 90, bubbleInfo.rotation.y + 90, bubbleInfo.rotation.z + 90);
+        DialogueBubbleDisplay bubbleDisp = newBubble.GetComponent<DialogueBubbleDisplay>();
+        bubbleDisp.SetText(bubbleInfo.text);
+        bubbleDisp.SetTextColor(bubbleInfo.textColor);
         currentEntryTime = 0;
         maxEntryTime = bubbleInfo.entryTime;
         currentBubble = newBubble;
@@ -172,10 +188,12 @@ public static class ConversationManager
     {
         poolIndex = 0;
         objectPool = new GameObject[MAX_NUM_OF_POOL];
+        textObjects = new GameObject[MAX_NUM_OF_POOL];
         for (int i = 0; i < MAX_NUM_OF_POOL; i++)
         {
             objectPool[i] = GameObject.CreatePrimitive(PrimitiveType.Plane);
             objectPool[i].transform.position = new Vector3(0, -1000, 0);
+            objectPool[i].AddComponent<DialogueBubbleDisplay>().SetTextPrefab(textPrefab);
             objectPool[i].SetActive(false);
         }
     }
