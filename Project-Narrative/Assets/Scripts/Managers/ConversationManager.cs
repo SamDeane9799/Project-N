@@ -20,7 +20,6 @@ public static class ConversationManager
     private static GameObject textPrefab;
     private static GameObject[] textObjects;
 
-    //private static GameObject dialogueBubblePrefab;
     private static float currentEntryTime;
     private static float maxEntryTime;
 
@@ -39,9 +38,9 @@ public static class ConversationManager
     private static List<KeyValuePair<int, int>> interruptsOn = new List<KeyValuePair<int, int>>();
 
     private static Vector3[] positions = { 
-    new Vector3(0, 2, 0), new Vector3(1.5f, 1f, 0), new Vector3(2, 0, 0),
-    new Vector3(1.5f, -1f, 0),new Vector3(0, -2, 0), new Vector3(-1.5f, -1f, 0),
-    new Vector3(-2, 0, 0), new Vector3(-1.5f, 1f, 0) };
+    new Vector3(0, 10, 0), new Vector3(5f, 7.5f, 0), new Vector3(10, 0, 0),
+    new Vector3(7.5f, -5f, 0),new Vector3(0, -10, 0), new Vector3(-7.5f, -5f, 0),
+    new Vector3(-10, 0, 0), new Vector3(-7.5f, 5f, 0) };
     private static Vector3[] responsePositions = {
     new Vector3(-2, -1f, 0), new Vector3(-2, 1f, 0),
     new Vector3(2, 1f, 0), new Vector3(2, 1f, 0)};
@@ -81,10 +80,8 @@ public static class ConversationManager
             currentBubble.SetActive(true);
             if (currentPhrase.GetNumOfBubbles() > 0)
                 DisplayBubble(currentPhrase.IncrementBubble());
-            else if (currentBox.GetNumOfPhrases() > 0)
+            else if(currentBox.GetNumOfPhrases() > 0)
                 SetPhrase(currentBox.IncrementPhrase());
-            else
-                DisplayPlayerResponses();
         }
     }
 
@@ -116,43 +113,48 @@ public static class ConversationManager
             if (box.responses[i].isInterrupt.Key)
                 interruptsOn.Add(new KeyValuePair<int, int>(i, box.responses[i].isInterrupt.Value));
         }
-        currentPhraseIndex = 0;
+        currentPhraseIndex = -1;
         SetPhrase(box.IncrementPhrase());
     }
 
 
     private static void SetPhrase(Phrase phrase)
     {
+        currentPhrase = phrase;
         currentPhraseIndex++;
-        interruptsOn.ForEach((e) =>
+        for (int i = 0; i < interruptsOn.Count; i++)
         {
             //Detect if we've hit a phrase with an interrupt on it
-            if (e.Value == currentPhraseIndex)
+            if (interruptsOn[i].Value == currentPhraseIndex)
             {
-                ClearScreen();
-                DisplayBubble(currentBox.responses[e.Key]);
+                DialogueBubble newBubble = currentPhrase.IncrementBubble();
+                newBubble.SetInterrupt(currentBox.responses[interruptsOn[i].Key]);
+                DisplayBubble(newBubble);
+                return;
             }
-        });
-        currentPhrase = phrase;
-        ClearScreen();
+        };
         DisplayBubble(currentPhrase.IncrementBubble());
     }
 
 
     public static void DisplayBubble(DialogueBubble bubbleInfo)
     {
+        if (bubbleInfo.GetInterrupt() != null)
+            DisplayBubble(bubbleInfo.GetInterrupt());
         GameObject newBubble = objectPool[poolIndex];
         poolIndex++;
         if (poolIndex >= MAX_NUM_OF_POOL)
             poolIndex = 0;
-        newBubble.transform.parent = partner.GetHeadTransform();
         if (bubbleInfo is PlayerResponse)
         {
             newBubble.transform.localPosition = responsePositions[bubbleInfo.location];
-            responsesDisplayed.Add((PlayerResponse) bubbleInfo);
+            responsesDisplayed.Add((PlayerResponse)bubbleInfo);
         }
         else
+        {
+            newBubble.transform.parent = partner.GetHeadTransform();
             newBubble.transform.localPosition = positions[bubbleInfo.location];
+        }
         newBubble.transform.localScale = bubbleInfo.scale;
         newBubble.transform.localRotation = Quaternion.Euler(bubbleInfo.rotation.x - 90, bubbleInfo.rotation.y + 90, bubbleInfo.rotation.z + 90);
         DialogueBubbleDisplay bubbleDisp = newBubble.GetComponent<DialogueBubbleDisplay>();
@@ -162,6 +164,9 @@ public static class ConversationManager
         maxEntryTime = bubbleInfo.entryTime;
         currentBubble = newBubble;
         bubblesOnScreen.Add(currentBubble);
+
+        if (currentPhrase.GetNumOfBubbles() <= 0 && currentBox.GetNumOfPhrases() <= 0)
+            DisplayPlayerResponses();
     }
 
     private static void DisplayPlayerResponses()

@@ -15,6 +15,8 @@ public class DialogueBubble
     public float entryTime { get; }
     public string text { get; }
 
+    private DialogueBubble interruptBubble;
+
     public DialogueBubble(string Text, int BackgroundTexture, int BackgroundAnimation, Vector3 BackgroundColor, Vector3 TextColor, int TextAnimation, int Location, Vector3 Scale, Vector3 Rotation, float EntryTime)
     {
         backgroundTexture = BackgroundTexture;
@@ -27,5 +29,15 @@ public class DialogueBubble
         entryTime = EntryTime;
         text = Text;
         textColor = TextColor;
+    }
+
+    public void SetInterrupt(DialogueBubble bubble)
+    {
+        interruptBubble = bubble;
+    }
+
+    public DialogueBubble GetInterrupt()
+    {
+        return interruptBubble;
     }
 }

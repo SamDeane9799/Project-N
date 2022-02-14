@@ -34,9 +34,14 @@ public class DialogueBubbleDisplay : MonoBehaviour
     public void SetText(string text)
     {
         textToSet = text;
+        if (myText != null)
+            myText.text = textToSet;
     }
     public void SetTextColor(Vector3 color)
     {
         textColor = new Color(color.x, color.y, color.z);
+        if (myText != null)
+            myText.color = textColor;
+
     }
 }
