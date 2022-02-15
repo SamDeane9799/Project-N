@@ -30,6 +30,7 @@ public static class ConversationManager
     private static List<GameObject> bubblesOnScreen = new List<GameObject>();
     private static List<PlayerResponse> responsesDisplayed = new List<PlayerResponse>();
     private static int currentPhraseIndex = -1;
+    private static bool phraseChanged;
 
     private static int poolIndex;
     private const int MAX_NUM_OF_POOL = 12;
@@ -77,6 +78,11 @@ public static class ConversationManager
         currentEntryTime += deltaTime;
         if(currentEntryTime >= maxEntryTime && !currentBubble.activeInHierarchy)
         {
+            if (phraseChanged)
+            {
+                ClearScreen();
+                phraseChanged = false;
+            }
             currentBubble.SetActive(true);
             if (currentPhrase.GetNumOfBubbles() > 0)
                 DisplayBubble(currentPhrase.IncrementBubble());
@@ -122,6 +128,7 @@ public static class ConversationManager
     {
         currentPhrase = phrase;
         currentPhraseIndex++;
+        phraseChanged = true;
         for (int i = 0; i < interruptsOn.Count; i++)
         {
             //Detect if we've hit a phrase with an interrupt on it
@@ -132,7 +139,8 @@ public static class ConversationManager
                 DisplayBubble(newBubble);
                 return;
             }
-        };
+        }
+        currentPhrase = phrase;
         DisplayBubble(currentPhrase.IncrementBubble());
     }
 
@@ -151,7 +159,7 @@ public static class ConversationManager
             responsesDisplayed.Add((PlayerResponse)bubbleInfo);
         }
         else
-        {
+        {            
             newBubble.transform.parent = partner.GetHeadTransform();
             newBubble.transform.localPosition = positions[bubbleInfo.location];
         }
@@ -179,14 +187,18 @@ public static class ConversationManager
     }
     private static void ClearScreen()
     {
-        bubblesOnScreen.ForEach((e) =>
+        for(int i = 0; i < bubblesOnScreen.Count; i++)
         {
-            e.SetActive(false);
-            e.transform.position = new Vector3(0, -1000, 0);
-        });
-        poolIndex = 0;
+            if (bubblesOnScreen[i].activeInHierarchy)
+            {
+                bubblesOnScreen[i].SetActive(false);
+                bubblesOnScreen[i].transform.position = new Vector3(0, -1000, 0);
+                bubblesOnScreen.Remove(bubblesOnScreen[i]);
+                i--;
+            }
+        }
+        poolIndex = bubblesOnScreen.Count;
         responsesDisplayed.Clear();
-        bubblesOnScreen.Clear();
     }
 
     public static void CreatePool()
