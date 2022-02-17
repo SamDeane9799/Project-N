@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
             }
             else
             {
+                ConversationManager.Reset();
                 potentialNPC.PlayerLeft();
             }
         }

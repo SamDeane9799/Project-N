@@ -73,7 +73,6 @@ public class NPC : MonoBehaviour
     public void PlayerLeft()
     {
         lookingAtPlayer = false;
-        ConversationManager.EndConversation();
     }
 
     public void RotateTowards(Transform toLookTowards)

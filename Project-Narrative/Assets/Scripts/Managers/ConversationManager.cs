@@ -57,11 +57,18 @@ public static class ConversationManager
         SetBox(partner.GetMyDialogueBox());
     }
 
-    public static void EndConversation()
+    public static void Reset()
     {
         partner = null;
         inConversation = false;
         ClearScreen();
+        currentBox.ResetBox();
+        currentBox = null;
+        currentPhrase = null;
+        currentPhraseIndex = 0;
+        currentEntryTime = 0;
+        phraseChanged = false;
+        maxEntryTime = float.MaxValue;
     }
 
     //May have to remove ref later on, I just want a constantly update reference to player during conversation :/

@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class DialogueBox
 {
-    public Queue<Phrase> phrases { get; }
+    public List<Phrase> phrases { get; }
     public PlayerResponse[] responses { get; }
+    private int phraseIndex = -1;
     private short ID;
     private List<short> parentIDs;
     public short[] childIDs { get; }
     private int animationID;
 
-    public DialogueBox(short boxID, Queue<Phrase> Phrases, PlayerResponse[] Responses, int AnimationID)
+    public DialogueBox(short boxID, List<Phrase> Phrases, PlayerResponse[] Responses, int AnimationID)
     {
         ID = boxID;
         phrases = Phrases;
@@ -36,8 +37,9 @@ public class DialogueBox
 
     public Phrase IncrementPhrase()
     {
+        phraseIndex++;
         if (phrases.Count > 0)
-            return phrases.Dequeue();
+            return phrases[phraseIndex];
         return null;
     }
 
@@ -48,7 +50,16 @@ public class DialogueBox
 
     public int GetNumOfPhrases()
     {
-        return phrases.Count;
+        return phrases.Count - (phraseIndex + 1);
+    }
+
+    public void ResetBox()
+    {
+        phraseIndex = -1;
+        foreach(Phrase p in phrases)
+        {
+            p.ResetIndex();
+        }
     }
 
 }

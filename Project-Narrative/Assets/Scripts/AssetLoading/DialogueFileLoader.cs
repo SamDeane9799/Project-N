@@ -33,21 +33,21 @@ public static class DialogueFileLoader
                 JObject boxObject = (JObject)treeObject[i];
 
                 JArray phrases = boxObject.Value<JArray>("phrases");
-                Queue<Phrase> boxPhrases = new Queue<Phrase>();
+                List<Phrase> boxPhrases = new List<Phrase>();
                 JArray responses = boxObject.Value<JArray>("responses");
                 PlayerResponse[] playerResponses = new PlayerResponse[responses.Count];
 
                 for (int j = 0; j < phrases.Count; j++)
                 {
                     JArray phraseObject = phrases.Value<JArray>(j);
-                    Queue<DialogueBubble> dialogueBubbles = new Queue<DialogueBubble>();
+                    List<DialogueBubble> dialogueBubbles = new List<DialogueBubble>();
                     for (int b = 0; b < phraseObject.Count; b++)
                     {
                         JObject bubbleObject = (JObject)phraseObject[b];
-                        dialogueBubbles.Enqueue(new DialogueBubble(bubbleObject.Value<string>("text"), bubbleObject.Value<string>("background_texture"), bubbleObject.Value<int>("background_animation"), ParseString(bubbleObject.Value<string>("background_color")), ParseString(bubbleObject.Value<string>("text_color")), bubbleObject.Value<int>("text_animation"),
+                        dialogueBubbles.Add(new DialogueBubble(bubbleObject.Value<string>("text"), bubbleObject.Value<string>("background_texture"), bubbleObject.Value<int>("background_animation"), ParseString(bubbleObject.Value<string>("background_color")), ParseString(bubbleObject.Value<string>("text_color")), bubbleObject.Value<int>("text_animation"),
                             bubbleObject.Value<int>("location"), ParseString(bubbleObject.Value<string>("scale")), ParseString(bubbleObject.Value<string>("rotation")), bubbleObject.Value<float>("entry_time")));
                     }
-                    boxPhrases.Enqueue(new Phrase(dialogueBubbles));
+                    boxPhrases.Add(new Phrase(dialogueBubbles));
                 }
 
                 for (int pr = 0; pr < playerResponses.Length; pr++)

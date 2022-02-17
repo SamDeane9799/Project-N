@@ -4,23 +4,29 @@ using UnityEngine;
 
 public class Phrase
 {
-    protected Queue<DialogueBubble> bubbles;
+    protected List<DialogueBubble> bubbles;
+    private int bubbleIndex = -1;
 
-    public Phrase(Queue<DialogueBubble> Bubbles)
+    public Phrase(List<DialogueBubble> Bubbles)
     {
         bubbles = Bubbles;
     }
 
     public DialogueBubble IncrementBubble()
     {
+        bubbleIndex++;
         if(bubbles.Count > 0)
-            return bubbles.Dequeue();
+            return bubbles[bubbleIndex];
         return null;
     }
 
     public int GetNumOfBubbles()
     {
-        return bubbles.Count;
+        return bubbles.Count - (bubbleIndex + 1);
+    }
+    public void ResetIndex()
+    {
+        bubbleIndex = -1;
     }
 
 }
