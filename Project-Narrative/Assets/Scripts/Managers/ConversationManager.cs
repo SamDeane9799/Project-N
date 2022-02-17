@@ -39,9 +39,9 @@ public static class ConversationManager
     private static List<KeyValuePair<int, int>> interruptsOn = new List<KeyValuePair<int, int>>();
 
     private static Vector3[] positions = { 
-    new Vector3(0, 10, 0), new Vector3(5f, 7.5f, 0), new Vector3(10, 0, 0),
-    new Vector3(7.5f, -5f, 0),new Vector3(0, -10, 0), new Vector3(-7.5f, -5f, 0),
-    new Vector3(-10, 0, 0), new Vector3(-7.5f, 5f, 0) };
+    new Vector3(0, 15, 0), new Vector3(7.5f, 12.5f, 0), new Vector3(15, 0, 0),
+    new Vector3(10f, -7.5f, 0),new Vector3(0, -15, 0), new Vector3(-10f, -7.5f, 0),
+    new Vector3(-15, 0, 0), new Vector3(-10f, 7.5f, 0) };
     private static Vector3[] responsePositions = {
     new Vector3(-2, -1f, 0), new Vector3(-2, 1f, 0),
     new Vector3(2, 1f, 0), new Vector3(2, 1f, 0)};
@@ -54,7 +54,7 @@ public static class ConversationManager
         }
         partner = Partner;
         inConversation = true;
-        SetBox(DialogueFileLoader.GetDialogueTree(partner.GetTreeID()).GetDialogueBox(001));
+        SetBox(partner.GetMyDialogueBox());
     }
 
     public static void EndConversation()
@@ -66,7 +66,7 @@ public static class ConversationManager
 
     //May have to remove ref later on, I just want a constantly update reference to player during conversation :/
     //Would also be way easier in c++ :)
-    public static void SetPlayer(ref Player Player)
+    public static void SetPlayer(Player Player)
     {
         player = Player;
     }
@@ -150,6 +150,7 @@ public static class ConversationManager
         if (bubbleInfo.GetInterrupt() != null)
             DisplayBubble(bubbleInfo.GetInterrupt());
         GameObject newBubble = objectPool[poolIndex];
+        newBubble.transform.localRotation = Quaternion.Euler(bubbleInfo.rotation.x - 90, bubbleInfo.rotation.y + 90, bubbleInfo.rotation.z + 90);
         poolIndex++;
         if (poolIndex >= MAX_NUM_OF_POOL)
             poolIndex = 0;
@@ -162,9 +163,10 @@ public static class ConversationManager
         {            
             newBubble.transform.parent = partner.GetHeadTransform();
             newBubble.transform.localPosition = positions[bubbleInfo.location];
+            newBubble.transform.LookAt(new Vector3(player.transform.position.x, player.transform.position.y + 5, player.transform.position.z));
+            newBubble.transform.Rotate(new Vector3(-90, 90, 90));
         }
         newBubble.transform.localScale = bubbleInfo.scale;
-        newBubble.transform.localRotation = Quaternion.Euler(bubbleInfo.rotation.x - 90, bubbleInfo.rotation.y + 90, bubbleInfo.rotation.z + 90);
         DialogueBubbleDisplay bubbleDisp = newBubble.GetComponent<DialogueBubbleDisplay>();
         bubbleDisp.SetText(bubbleInfo.text);
         bubbleDisp.SetTextColor(bubbleInfo.textColor);

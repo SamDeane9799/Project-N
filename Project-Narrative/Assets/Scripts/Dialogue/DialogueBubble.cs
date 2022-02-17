@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogueBubble
 {
-    public int backgroundTexture { get; }
+    public string backgroundTexture { get; }
     public int backgroundAnimation { get; }
     public Vector3 backgroundColor { get; }
     public Vector3 textColor { get; }
@@ -17,7 +17,7 @@ public class DialogueBubble
 
     private DialogueBubble interruptBubble;
 
-    public DialogueBubble(string Text, int BackgroundTexture, int BackgroundAnimation, Vector3 BackgroundColor, Vector3 TextColor, int TextAnimation, int Location, Vector3 Scale, Vector3 Rotation, float EntryTime)
+    public DialogueBubble(string Text, string BackgroundTexture, int BackgroundAnimation, Vector3 BackgroundColor, Vector3 TextColor, int TextAnimation, int Location, Vector3 Scale, Vector3 Rotation, float EntryTime)
     {
         backgroundTexture = BackgroundTexture;
         backgroundColor = BackgroundColor;

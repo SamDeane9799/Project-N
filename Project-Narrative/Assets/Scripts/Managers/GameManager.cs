@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
             DialogueFileLoader.LoadDialogueTrees(scene.name);
             ConversationManager.SetTextPrefab(textPrefab);
             ConversationManager.CreatePool();
+            AssetLoader.LoadSprites();
         }
     }
 }

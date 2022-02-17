@@ -20,7 +20,7 @@ public class NPC : MonoBehaviour
     private float baseTurnSpeed;
     private bool lookingAtPlayer;
 
-
+    private DialogueBox myBox;
     private Vector3 positionLookingAt;
 
     // Start is called before the first frame update
@@ -73,6 +73,7 @@ public class NPC : MonoBehaviour
     public void PlayerLeft()
     {
         lookingAtPlayer = false;
+        ConversationManager.EndConversation();
     }
 
     public void RotateTowards(Transform toLookTowards)
@@ -84,5 +85,11 @@ public class NPC : MonoBehaviour
     public Transform GetHeadTransform()
     {
         return headTransform;
+    }
+
+    public DialogueBox GetMyDialogueBox()
+    {
+        myBox = DialogueFileLoader.GetDialogueTree(treeID).GetDialogueBox(1);
+        return myBox;
     }
 }

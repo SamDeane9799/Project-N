@@ -12,7 +12,7 @@ public class PlayerResponse : DialogueBubble
     private short childID;
 
     public PlayerResponse(int Priority, Trait RequiredTrait, KeyValuePair<bool, int> IsInterrupt, ResponseType Type, short ChildID,
-        string Text, int BackgroundTexture, int BackgroundAnimation, Vector3 BackgroundColor, Vector3 TextColor, int TextAnimation, int Location, Vector3 Scale, Vector3 Rotation, float EntryTime)
+        string Text, string BackgroundTexture, int BackgroundAnimation, Vector3 BackgroundColor, Vector3 TextColor, int TextAnimation, int Location, Vector3 Scale, Vector3 Rotation, float EntryTime)
         : base(Text, BackgroundTexture, BackgroundAnimation, BackgroundColor, TextColor, TextAnimation, Location, Scale, Rotation, EntryTime)
     {
         priority = Priority;

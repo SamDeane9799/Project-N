@@ -15,7 +15,7 @@
                 "type": "professional",
                 "child": "002",
                 "text": "lol",
-                "background_texture": "0",
+                "background_texture": "bubble",
                 "background_color": "0, 0, 0",
                 "background_animation": "0",
                 "text_animation": "0",
@@ -31,7 +31,7 @@
             [
                 {
                     "text": "Hi",
-                    "background_texture": "0",
+                    "background_texture": "bubble",
                     "background_color": "0, 0, 0",
                     "background_animation": "0",
                     "text_animation": "0",
@@ -43,7 +43,7 @@
                 },
                 {
                     "text": "how are you?",
-                    "background_texture": "0",
+                    "background_texture": "bubble",
                     "background_color": "256, 256, 256",
                     "background_animation": "0",
                     "text_animation": "1",
@@ -57,7 +57,7 @@
             [
                 {
                     "text": "I...",
-                    "background_texture": "0",
+                    "background_texture": "bubble",
                     "background_color": "256, 256, 256",
                     "background_animation": "0",
                     "text_animation": "0",
@@ -69,7 +69,7 @@
                 },
                 {
                     "text": "Fucked your mom",
-                    "background_texture": "0",
+                    "background_texture": "bubble",
                     "background_color": "0, 0, 0",
                     "background_animation": "0",
                     "text_animation": "1",
@@ -93,7 +93,7 @@
                 "is_interrupt": "false, 0",
                 "type": "defensive",
                 "text": "Hi",
-                "background_texture": "0",
+                "background_texture": "bubble",
                 "background_color": "256, 256, 256",
                 "background_animation": "0",
                 "text_animation": "0",
@@ -109,7 +109,7 @@
             [
                 {
                     "text": "Wait...",
-                    "background_texture": "0",
+                    "background_texture": "bubble",
                     "background_color": "256, 256, 256",
                     "background_animation": "0",
                     "text_animation": "0",
@@ -121,7 +121,7 @@
                 },
                 {
                     "text": "Don't tell me it's your first day.",
-                    "background_texture": "0",
+                    "background_texture": "bubble",
                     "background_color": "0, 0, 0",
                     "background_animation": "1",
                     "text_animation": "2",

@@ -44,7 +44,7 @@ public static class DialogueFileLoader
                     for (int b = 0; b < phraseObject.Count; b++)
                     {
                         JObject bubbleObject = (JObject)phraseObject[b];
-                        dialogueBubbles.Enqueue(new DialogueBubble(bubbleObject.Value<string>("text"), bubbleObject.Value<int>("background_texture"), bubbleObject.Value<int>("background_animation"), ParseString(bubbleObject.Value<string>("background_color")), ParseString(bubbleObject.Value<string>("text_color")), bubbleObject.Value<int>("text_animation"),
+                        dialogueBubbles.Enqueue(new DialogueBubble(bubbleObject.Value<string>("text"), bubbleObject.Value<string>("background_texture"), bubbleObject.Value<int>("background_animation"), ParseString(bubbleObject.Value<string>("background_color")), ParseString(bubbleObject.Value<string>("text_color")), bubbleObject.Value<int>("text_animation"),
                             bubbleObject.Value<int>("location"), ParseString(bubbleObject.Value<string>("scale")), ParseString(bubbleObject.Value<string>("rotation")), bubbleObject.Value<float>("entry_time")));
                     }
                     boxPhrases.Enqueue(new Phrase(dialogueBubbles));
@@ -57,7 +57,7 @@ public static class DialogueFileLoader
                     if(responseObj.ContainsKey("child"))
                         childID = responseObj.Value<short>("child");
                     playerResponses[pr] = new PlayerResponse(responseObj.Value<int>("priority"), (Trait)Enum.Parse(typeof(Trait), responseObj.Value<string>("trait").ToUpper()), StringToPair(responseObj.Value<string>("is_interrupt")),
-                        (ResponseType)Enum.Parse(typeof(ResponseType), responseObj.Value<string>("type").ToUpper()), childID, responseObj.Value<string>("text"), responseObj.Value<int>("background_texture"),
+                        (ResponseType)Enum.Parse(typeof(ResponseType), responseObj.Value<string>("type").ToUpper()), childID, responseObj.Value<string>("text"), responseObj.Value<string>("background_texture"),
                         responseObj.Value<int>("background_animation"), ParseString(responseObj.Value<string>("background_color")), ParseString(responseObj.Value<string>("text_color")), responseObj.Value<int>("text_animation"), responseObj.Value<int>("location"), ParseString(responseObj.Value<string>("scale")),
                         ParseString(responseObj.Value<string>("rotation")), responseObj.Value<float>("entry_time"));
                 }

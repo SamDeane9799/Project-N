@@ -40,7 +40,8 @@ public class Player : MonoBehaviour
             if (inNPC)
             {
                 potentialNPC.RotateTowards(transform.GetChild(0));
-                if(potentialNPC.GetHasDialogue())
+                ConversationManager.SetPlayer(this);
+                if (potentialNPC.GetHasDialogue())
                 {
                     ConversationManager.SetConversationPartners(potentialNPC);
                 }
