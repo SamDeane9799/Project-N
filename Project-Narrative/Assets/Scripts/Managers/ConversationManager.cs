@@ -93,8 +93,10 @@ public static class ConversationManager
             currentBubble.SetActive(true);
             if (currentPhrase.GetNumOfBubbles() > 0)
                 DisplayBubble(currentPhrase.IncrementBubble());
-            else if(currentBox.GetNumOfPhrases() > 0)
+            else if (currentBox.GetNumOfPhrases() > 0)
                 SetPhrase(currentBox.IncrementPhrase());
+            //else
+                //DisplayPlayerResponses();
         }
     }
 
@@ -154,15 +156,23 @@ public static class ConversationManager
 
     public static void DisplayBubble(DialogueBubble bubbleInfo)
     {
-        if (bubbleInfo.GetInterrupt() != null)
-            DisplayBubble(bubbleInfo.GetInterrupt());
-        GameObject newBubble = objectPool[poolIndex];
-        newBubble.transform.localRotation = Quaternion.Euler(bubbleInfo.rotation.x - 90, bubbleInfo.rotation.y + 90, bubbleInfo.rotation.z + 90);
         poolIndex++;
         if (poolIndex >= MAX_NUM_OF_POOL)
-            poolIndex = 0;
+            poolIndex = -1;
+
+        GameObject newBubble = objectPool[poolIndex];
+
+        if (bubbleInfo.GetInterrupt() != null)
+        {
+            DisplayBubble(bubbleInfo.GetInterrupt());
+        }
+
+
+        newBubble.transform.localRotation = Quaternion.Euler(bubbleInfo.rotation.x - 90, bubbleInfo.rotation.y + 90, bubbleInfo.rotation.z + 90);
+
         if (bubbleInfo is PlayerResponse)
         {
+            newBubble.transform.parent = player.transform;
             newBubble.transform.localPosition = responsePositions[bubbleInfo.location];
             responsesDisplayed.Add((PlayerResponse)bubbleInfo);
         }
@@ -173,7 +183,9 @@ public static class ConversationManager
             newBubble.transform.LookAt(new Vector3(player.transform.position.x, player.transform.position.y + 5, player.transform.position.z));
             newBubble.transform.Rotate(new Vector3(-90, 90, 90));
         }
+
         newBubble.transform.localScale = bubbleInfo.scale;
+
         DialogueBubbleDisplay bubbleDisp = newBubble.GetComponent<DialogueBubbleDisplay>();
         bubbleDisp.SetText(bubbleInfo.text);
         bubbleDisp.SetTextColor(bubbleInfo.textColor);
@@ -181,9 +193,6 @@ public static class ConversationManager
         maxEntryTime = bubbleInfo.entryTime;
         currentBubble = newBubble;
         bubblesOnScreen.Add(currentBubble);
-
-        if (currentPhrase.GetNumOfBubbles() <= 0 && currentBox.GetNumOfPhrases() <= 0)
-            DisplayPlayerResponses();
     }
 
     private static void DisplayPlayerResponses()
@@ -201,18 +210,19 @@ public static class ConversationManager
             if (bubblesOnScreen[i].activeInHierarchy)
             {
                 bubblesOnScreen[i].SetActive(false);
+                bubblesOnScreen[i].GetComponent<DialogueBubbleDisplay>().ResetBubble();
+                bubblesOnScreen[i].transform.parent = null;
                 bubblesOnScreen[i].transform.position = new Vector3(0, -1000, 0);
                 bubblesOnScreen.Remove(bubblesOnScreen[i]);
                 i--;
             }
         }
-        poolIndex = bubblesOnScreen.Count;
         responsesDisplayed.Clear();
     }
 
     public static void CreatePool()
     {
-        poolIndex = 0;
+        poolIndex = -1;
         objectPool = new GameObject[MAX_NUM_OF_POOL];
         textObjects = new GameObject[MAX_NUM_OF_POOL];
         for (int i = 0; i < MAX_NUM_OF_POOL; i++)

@@ -24,6 +24,40 @@
                 "scale": "1, 1, 1",
                 "rotation": "0, 0, 0",
                 "entry_time": 2
+            },
+            {
+                "priority": "10",
+                "trait": "abrasive",
+                "is_interrupt": "false,0",
+                "type": "professional",
+                "child": "002",
+                "text": "ok?",
+                "background_texture": "bubble",
+                "background_color": "0, 0, 0",
+                "background_animation": "0",
+                "text_animation": "0",
+                "text_color": "256, 256, 256",
+                "location": "1",
+                "scale": "1, 1, 1",
+                "rotation": "0, 0, 0",
+                "entry_time": 2
+            },
+            {
+                "priority": "5",
+                "trait": "abrasive",
+                "is_interrupt": "false,0",
+                "type": "professional",
+                "child": "002",
+                "text": "lol",
+                "background_texture": "bubble",
+                "background_color": "0, 0, 0",
+                "background_animation": "0",
+                "text_animation": "0",
+                "text_color": "256, 256, 256",
+                "location": "1",
+                "scale": "1, 1, 1",
+                "rotation": "0, 0, 0",
+                "entry_time": 2
             }
         ],
         "phrases": 
