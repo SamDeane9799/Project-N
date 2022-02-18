@@ -1413,11 +1413,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b89d2bb0714da9a44a9dd16ccc2a6555, type: 3}
---- !u!4 &1135185419 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6870138471849078968, guid: db7824414f0505341b02170a563c0ed9, type: 3}
-  m_PrefabInstance: {fileID: 2926384982089590788}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1176789024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2507,7 +2502,7 @@ PrefabInstance:
     - target: {fileID: 2926384982105918943, guid: db7824414f0505341b02170a563c0ed9, type: 3}
       propertyPath: headTransform
       value: 
-      objectReference: {fileID: 1135185419}
+      objectReference: {fileID: 0}
     - target: {fileID: 3392937714453954997, guid: db7824414f0505341b02170a563c0ed9, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -2518,7 +2513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3392937714453954997, guid: db7824414f0505341b02170a563c0ed9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3392937714453954997, guid: db7824414f0505341b02170a563c0ed9, type: 3}
       propertyPath: m_LocalPosition.z
