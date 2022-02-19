@@ -34,9 +34,8 @@ public class GameManager : MonoBehaviour
         {
             playerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
             DialogueFileLoader.LoadDialogueTrees(scene.name);
-            ConversationManager.SetTextPrefab(textPrefab);
-            ConversationManager.CreatePool();
-            AssetLoader.LoadSprites();
+            ConversationManager.Init(textPrefab);
+            //AssetLoader.LoadSprites();
         }
     }
 }

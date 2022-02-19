@@ -4,7 +4,7 @@
         "id": "001"
     },
     {
-        "id": "001",
+        "id": "000",
         "entry_time": 3,
         "animation": 69,
         "responses": [
@@ -13,7 +13,7 @@
                 "trait": "abrasive",
                 "is_interrupt": "true,1",
                 "type": "professional",
-                "child": "002",
+                "child": "001",
                 "text": "lol",
                 "background_texture": "bubble",
                 "background_color": "0, 0, 0",
@@ -30,7 +30,7 @@
                 "trait": "abrasive",
                 "is_interrupt": "false,0",
                 "type": "professional",
-                "child": "002",
+                "child": "001",
                 "text": "ok?",
                 "background_texture": "bubble",
                 "background_color": "0, 0, 0",
@@ -47,7 +47,7 @@
                 "trait": "abrasive",
                 "is_interrupt": "false,0",
                 "type": "professional",
-                "child": "002",
+                "child": "001",
                 "text": "lol",
                 "background_texture": "bubble",
                 "background_color": "0, 0, 0",
@@ -102,7 +102,7 @@
                     "entry_time": 2
                 },
                 {
-                    "text": "Fucked your mom",
+                    "text": "Don't really work",
                     "background_texture": "bubble",
                     "background_color": "0, 0, 0",
                     "background_animation": "0",
@@ -118,7 +118,7 @@
         ]
     },
     {
-        "id": "002",
+        "id": "001",
         "animation": 1,
         "responses": [
             {
@@ -147,22 +147,34 @@
                     "background_color": "256, 256, 256",
                     "background_animation": "0",
                     "text_animation": "0",
-                    "text_color": "0, 0, 0",
+                    "text_color": "256, 0, 0",
                     "location": "6",
                     "scale": "1, 1, 1",
                     "rotation": "0, 0, 0",
                     "entry_time": 2
                 },
                 {
-                    "text": "Don't tell me it's your first day.",
+                    "text": "You probably didn't see that last dialogue bubble.",
+                    "background_texture": "bubble",
+                    "background_color": "0, 0, 0",
+                    "background_animation": "1",
+                    "text_animation": "2",
+                    "text_color": "128, 128, 128",
+                    "location": "1",
+                    "scale": "1.5, 1.5, 1.5",
+                    "rotation": "0, 0, 30",
+                    "entry_time": 4
+                },
+                {
+                    "text": "Don't worry, It'll work later",
                     "background_texture": "bubble",
                     "background_color": "0, 0, 0",
                     "background_animation": "1",
                     "text_animation": "2",
                     "text_color": "256, 256, 256",
-                    "location": "1",
-                    "scale": "1.2, 1.2, 1",
-                    "rotation": "0, 0, 30",
+                    "location": "3",
+                    "scale": ".8, .8, .8",
+                    "rotation": "0, 0, -50",
                     "entry_time": 2
                 }
             ]

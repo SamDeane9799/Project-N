@@ -7,12 +7,13 @@ public class DialogueBubbleDisplay : MonoBehaviour
 {
     private GameObject textPrefab;
     private TextMeshPro myText;
-    private string textToSet;
-    private Color textColor;
+    private DialogueBubble myInfo;
+    private Vector3 nextPosition;
 
     private float timeActive;
     private float currentTime;
-    private float timer;
+
+    private bool inView = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,17 +21,28 @@ public class DialogueBubbleDisplay : MonoBehaviour
         myText.transform.localPosition = new Vector3(0, .5f, 0);
         myText.transform.localRotation = Quaternion.AngleAxis(90, new Vector3(1, 0, 0));
         myText.rectTransform.sizeDelta = new Vector2(10, 10);
-        myText.color = textColor;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeActive += Time.deltaTime;
-        if (myText.text != textToSet && timeActive % .5f == 0)
+        if (!inView && myInfo != null)
         {
-            myText.text = textToSet.Substring(0, (int)(timeActive * 2));
+            currentTime += Time.deltaTime;
+            if(currentTime >= myInfo.entryTime)
+            {
+                transform.localPosition = nextPosition;
+                myText.text = myInfo.text;
+                myText.color = new Color(myInfo.textColor.x, myInfo.textColor.y, myInfo.textColor.z);
+                gameObject.GetComponent<MeshRenderer>().material.color = new Color(myInfo.backgroundColor.x, myInfo.backgroundColor.y, myInfo.backgroundColor.z);
+                this.transform.localScale = myInfo.scale;
+                this.transform.localRotation = Quaternion.Euler(myInfo.rotation.x - 90, myInfo.rotation.y + 90, myInfo.rotation.z + 90);
+                inView = true;
+            }
+            return;
         }
+
+        timeActive += Time.deltaTime;
     }
 
     public void SetTextPrefab(GameObject prefab)
@@ -38,29 +50,35 @@ public class DialogueBubbleDisplay : MonoBehaviour
         textPrefab = prefab;
     }
 
-    public void SetText(string text)
+    public void SetInfo(DialogueBubble info, Vector3 posToAdd)
     {
-        textToSet = text;
-    }
-    public void SetTextColor(Vector3 color)
-    {
-        textColor = new Color(color.x, color.y, color.z);
-        if (myText != null)
-            myText.color = textColor;
-
+        myInfo = info;
+        nextPosition = posToAdd;
     }
 
-    public void SetTimer(float time)
+    public void Init(GameObject prefab)
     {
-        timer = time;
+        textPrefab = prefab;
+    }
+
+    public bool IsInView()
+    {
+        return inView;
+    }
+
+    public float GetEntryTime()
+    {
+        return myInfo.entryTime;
     }
 
     public void ResetBubble()
     {
-        textToSet = "";
         myText.text = "";
-        timer = 0;
         currentTime = 0;
         timeActive = 0;
+        myInfo = null;
+        inView = false;
+        transform.parent = null;
+        transform.localPosition = new Vector3(0, -1000, 0);
     }
 }

@@ -17,7 +17,7 @@ public static class DialogueFileLoader
 
     public static void LoadDialogueTrees(string sceneName)
     {
-        string resourcePath = Application.dataPath + Path.DirectorySeparatorChar + "Resources" + Path.DirectorySeparatorChar + sceneName;
+        string resourcePath = Application.streamingAssetsPath + Path.DirectorySeparatorChar + sceneName;
         string[] resourceFiles = Directory.GetFiles(resourcePath);
         foreach (string path in resourceFiles)
         {

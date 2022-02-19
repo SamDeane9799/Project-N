@@ -20,14 +20,12 @@ public static class ConversationManager
     private static GameObject textPrefab;
     private static GameObject[] textObjects;
 
-    private static float currentEntryTime;
-    private static float maxEntryTime;
-
     private static bool inConversation;
+    private static DialogueTree currentTree;
     private static DialogueBox currentBox;
     private static Phrase currentPhrase;
-    private static GameObject currentBubble;
-    private static List<GameObject> bubblesOnScreen = new List<GameObject>();
+    private static DialogueBubbleDisplay currentBubble;
+    private static List<DialogueBubbleDisplay>[] bubblesOnScreen;
     private static List<PlayerResponse> responsesDisplayed = new List<PlayerResponse>();
     private static int currentPhraseIndex = -1;
     private static bool phraseChanged;
@@ -46,6 +44,13 @@ public static class ConversationManager
     new Vector3(-2, -1f, 0), new Vector3(-2, 1f, 0),
     new Vector3(2, 1f, 0), new Vector3(2, 1f, 0)};
 
+
+    public static void Init(GameObject TextPrefab)
+    {
+        textPrefab = TextPrefab;
+        CreatePool();
+    }
+
     public static void SetConversationPartners(NPC Partner)
     {
         if (inConversation)
@@ -54,21 +59,22 @@ public static class ConversationManager
         }
         partner = Partner;
         inConversation = true;
-        SetBox(partner.GetMyDialogueBox());
+        currentTree = DialogueFileLoader.GetDialogueTree(partner.GetTreeID());
+        SetBox(currentTree.IncrementBox());
     }
 
     public static void Reset()
     {
         partner = null;
         inConversation = false;
-        ClearScreen();
+        HardClearScreen();
+        currentTree.Reset();
+        currentTree = null;
         currentBox.ResetBox();
         currentBox = null;
         currentPhrase = null;
         currentPhraseIndex = 0;
-        currentEntryTime = 0;
         phraseChanged = false;
-        maxEntryTime = float.MaxValue;
     }
 
     //May have to remove ref later on, I just want a constantly update reference to player during conversation :/
@@ -82,19 +88,21 @@ public static class ConversationManager
     {
         if (!inConversation)
             return;
-        currentEntryTime += deltaTime;
-        if(currentEntryTime >= maxEntryTime && !currentBubble.activeInHierarchy)
+        if(currentBubble.IsInView())
         {
             if (phraseChanged)
             {
-                ClearScreen();
+                SoftClearScreen();
                 phraseChanged = false;
             }
-            currentBubble.SetActive(true);
             if (currentPhrase.GetNumOfBubbles() > 0)
                 DisplayBubble(currentPhrase.IncrementBubble());
             else if (currentBox.GetNumOfPhrases() > 0)
                 SetPhrase(currentBox.IncrementPhrase());
+            else if (currentTree.HasMoreBoxes())
+            {
+                SetBox(currentTree.IncrementBox());
+            }
             //else
                 //DisplayPlayerResponses();
         }
@@ -104,25 +112,15 @@ public static class ConversationManager
     {
         if (num > responsesDisplayed.Count)
             return;
-        ClearScreen();
+        HardClearScreen();
         SetBox(DialogueFileLoader.GetDialogueTree(partner.GetTreeID()).GetDialogueBox(responsesDisplayed[num].GetChildID()));
-    }
-
-
-    //MIGHT HAVE TO USE THIS IF CREATEPRIMITIVE DOESNT WORK!
-    /*    public static void SetBubblePrefab(GameObject prefab)
-        {
-
-        }*/
-
-    public static void SetTextPrefab(GameObject prefab)
-    {
-        textPrefab = prefab;
     }
 
     public static void SetBox(DialogueBox box)
     {
+        HardClearScreen();
         currentBox = box;
+        bubblesOnScreen = new List<DialogueBubbleDisplay>[currentBox.GetNumOfPhrases()];
         for (int i = 0; i < box.responses.Length; i++)
         {
             if (box.responses[i].isInterrupt.Key)
@@ -137,6 +135,7 @@ public static class ConversationManager
     {
         currentPhrase = phrase;
         currentPhraseIndex++;
+        bubblesOnScreen[currentPhraseIndex] = new List<DialogueBubbleDisplay>();
         phraseChanged = true;
         for (int i = 0; i < interruptsOn.Count; i++)
         {
@@ -158,7 +157,7 @@ public static class ConversationManager
     {
         poolIndex++;
         if (poolIndex >= MAX_NUM_OF_POOL)
-            poolIndex = -1;
+            poolIndex = 0;
 
         GameObject newBubble = objectPool[poolIndex];
 
@@ -167,32 +166,22 @@ public static class ConversationManager
             DisplayBubble(bubbleInfo.GetInterrupt());
         }
 
-
-        newBubble.transform.localRotation = Quaternion.Euler(bubbleInfo.rotation.x - 90, bubbleInfo.rotation.y + 90, bubbleInfo.rotation.z + 90);
-
         if (bubbleInfo is PlayerResponse)
         {
             newBubble.transform.parent = player.transform;
-            newBubble.transform.localPosition = responsePositions[bubbleInfo.location];
             responsesDisplayed.Add((PlayerResponse)bubbleInfo);
         }
         else
         {            
             newBubble.transform.parent = partner.GetHeadTransform();
-            newBubble.transform.localPosition = positions[bubbleInfo.location];
             newBubble.transform.LookAt(new Vector3(player.transform.position.x, player.transform.position.y + 5, player.transform.position.z));
             newBubble.transform.Rotate(new Vector3(-90, 90, 90));
         }
 
-        newBubble.transform.localScale = bubbleInfo.scale;
-
         DialogueBubbleDisplay bubbleDisp = newBubble.GetComponent<DialogueBubbleDisplay>();
-        bubbleDisp.SetText(bubbleInfo.text);
-        bubbleDisp.SetTextColor(bubbleInfo.textColor);
-        currentEntryTime = 0;
-        maxEntryTime = bubbleInfo.entryTime;
-        currentBubble = newBubble;
-        bubblesOnScreen.Add(currentBubble);
+        bubbleDisp.SetInfo(bubbleInfo, positions[bubbleInfo.location]);
+        currentBubble = bubbleDisp;
+        bubblesOnScreen[currentPhraseIndex].Add(bubbleDisp);
     }
 
     private static void DisplayPlayerResponses()
@@ -203,24 +192,36 @@ public static class ConversationManager
                 DisplayBubble(pr);
         }
     }
-    private static void ClearScreen()
+
+    private static void SoftClearScreen()
     {
-        for(int i = 0; i < bubblesOnScreen.Count; i++)
+        if (currentPhraseIndex == 0)
+            return;
+        for (int i = 0; i < bubblesOnScreen[currentPhraseIndex - 1].Count; i++)
         {
-            if (bubblesOnScreen[i].activeInHierarchy)
+              bubblesOnScreen[currentPhraseIndex - 1][i].GetComponent<DialogueBubbleDisplay>().ResetBubble();
+        }
+        bubblesOnScreen[currentPhraseIndex - 1].Clear();
+        responsesDisplayed.Clear();
+    }
+    private static void HardClearScreen()
+    {
+        if (bubblesOnScreen == null)
+            return;
+        for(int i = 0; i < bubblesOnScreen.Length; i++)
+        {
+            if (bubblesOnScreen[i] == null)
+                break;
+            for (int j = 0; j < bubblesOnScreen[i].Count; j++)
             {
-                bubblesOnScreen[i].SetActive(false);
-                bubblesOnScreen[i].GetComponent<DialogueBubbleDisplay>().ResetBubble();
-                bubblesOnScreen[i].transform.parent = null;
-                bubblesOnScreen[i].transform.position = new Vector3(0, -1000, 0);
-                bubblesOnScreen.Remove(bubblesOnScreen[i]);
-                i--;
+                bubblesOnScreen[i][j].ResetBubble();
             }
+            bubblesOnScreen[i].Clear();
         }
         responsesDisplayed.Clear();
     }
 
-    public static void CreatePool()
+    private static void CreatePool()
     {
         poolIndex = -1;
         objectPool = new GameObject[MAX_NUM_OF_POOL];
@@ -230,7 +231,6 @@ public static class ConversationManager
             objectPool[i] = GameObject.CreatePrimitive(PrimitiveType.Plane);
             objectPool[i].transform.position = new Vector3(0, -1000, 0);
             objectPool[i].AddComponent<DialogueBubbleDisplay>().SetTextPrefab(textPrefab);
-            objectPool[i].SetActive(false);
         }
     }
 }

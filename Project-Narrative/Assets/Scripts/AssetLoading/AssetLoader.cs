@@ -9,7 +9,7 @@ public static class AssetLoader
 
     public static void LoadSprites()
     {
-        string path = Application.dataPath + "/" + "Resources" + "/" + "DialogueBubbles";
+        string path = Application.streamingAssetsPath + "/" + "Resources" + "/" + "DialogueBubbles";
         string[] files = Directory.GetFiles(path);
         foreach(string file in files)
         {
