@@ -32,11 +32,20 @@ public class DialogueBubbleDisplay : MonoBehaviour
             if(currentTime >= myInfo.entryTime)
             {
                 transform.localPosition = nextPosition;
-                myText.text = myInfo.text;
                 myText.color = new Color(myInfo.textColor.x, myInfo.textColor.y, myInfo.textColor.z);
                 gameObject.GetComponent<MeshRenderer>().material.color = new Color(myInfo.backgroundColor.x, myInfo.backgroundColor.y, myInfo.backgroundColor.z);
                 this.transform.localScale = myInfo.scale;
-                this.transform.localRotation = Quaternion.Euler(myInfo.rotation.x - 90, myInfo.rotation.y + 90, myInfo.rotation.z + 90);
+                if (myInfo is PlayerResponse)
+                {
+                    this.transform.localRotation = Quaternion.Euler(myInfo.rotation.x - 90, myInfo.rotation.y + 270, myInfo.rotation.z + 90);
+                    this.transform.localScale = new Vector3(transform.localScale.x / 5f, transform.localScale.y / 5f, transform.localScale.z / 5f);
+                    myText.text = myInfo.GetLocation() + 1 + ". " + myInfo.text;
+                }
+                else
+                {
+                    myText.text = myInfo.text;
+                    this.transform.localRotation = Quaternion.Euler(myInfo.rotation.x - 90, myInfo.rotation.y + 90, myInfo.rotation.z + 90);
+                }
                 inView = true;
             }
             return;

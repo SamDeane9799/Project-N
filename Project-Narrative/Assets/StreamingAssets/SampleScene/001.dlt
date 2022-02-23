@@ -20,7 +20,6 @@
                 "background_animation": "0",
                 "text_animation": "0",
                 "text_color": "256, 256, 256",
-                "location": "1",
                 "scale": "1, 1, 1",
                 "rotation": "0, 0, 0",
                 "entry_time": 2
@@ -37,7 +36,6 @@
                 "background_animation": "0",
                 "text_animation": "0",
                 "text_color": "256, 256, 256",
-                "location": "1",
                 "scale": "1, 1, 1",
                 "rotation": "0, 0, 0",
                 "entry_time": 2
@@ -54,7 +52,6 @@
                 "background_animation": "0",
                 "text_animation": "0",
                 "text_color": "256, 256, 256",
-                "location": "1",
                 "scale": "1, 1, 1",
                 "rotation": "0, 0, 0",
                 "entry_time": 2

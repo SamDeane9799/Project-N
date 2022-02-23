@@ -58,7 +58,7 @@ public static class DialogueFileLoader
                         childID = responseObj.Value<short>("child");
                     playerResponses[pr] = new PlayerResponse(responseObj.Value<int>("priority"), (Trait)Enum.Parse(typeof(Trait), responseObj.Value<string>("trait").ToUpper()), StringToPair(responseObj.Value<string>("is_interrupt")),
                         (ResponseType)Enum.Parse(typeof(ResponseType), responseObj.Value<string>("type").ToUpper()), childID, responseObj.Value<string>("text"), responseObj.Value<string>("background_texture"),
-                        responseObj.Value<int>("background_animation"), ParseString(responseObj.Value<string>("background_color")), ParseString(responseObj.Value<string>("text_color")), responseObj.Value<int>("text_animation"), responseObj.Value<int>("location"), ParseString(responseObj.Value<string>("scale")),
+                        responseObj.Value<int>("background_animation"), ParseString(responseObj.Value<string>("background_color")), ParseString(responseObj.Value<string>("text_color")), responseObj.Value<int>("text_animation"), ParseString(responseObj.Value<string>("scale")),
                         ParseString(responseObj.Value<string>("rotation")), responseObj.Value<float>("entry_time"));
                 }
 

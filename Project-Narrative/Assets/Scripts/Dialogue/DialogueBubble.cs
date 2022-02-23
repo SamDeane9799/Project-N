@@ -9,7 +9,7 @@ public class DialogueBubble
     public Vector3 backgroundColor { get; }
     public Vector3 textColor { get; }
     public int textAnimation { get; }
-    public int location { get; }
+    protected int location;
     public Vector3 scale { get; }
     public Vector3 rotation { get; }
     public float entryTime { get; }
@@ -39,5 +39,10 @@ public class DialogueBubble
     public DialogueBubble GetInterrupt()
     {
         return interruptBubble;
+    }
+
+    public int GetLocation()
+    {
+        return location;
     }
 }

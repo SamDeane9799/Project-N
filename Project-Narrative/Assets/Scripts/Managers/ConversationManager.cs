@@ -21,6 +21,7 @@ public static class ConversationManager
     private static GameObject[] textObjects;
 
     private static bool inConversation;
+    private static bool responsesOnScreen = false;
     private static DialogueTree currentTree;
     private static DialogueBox currentBox;
     private static Phrase currentPhrase;
@@ -41,8 +42,8 @@ public static class ConversationManager
     new Vector3(10f, -7.5f, 0),new Vector3(0, -15, 0), new Vector3(-10f, -7.5f, 0),
     new Vector3(-15, 0, 0), new Vector3(-10f, 7.5f, 0) };
     private static Vector3[] responsePositions = {
-    new Vector3(-2, -1f, 0), new Vector3(-2, 1f, 0),
-    new Vector3(2, 1f, 0), new Vector3(2, 1f, 0)};
+    new Vector3(-1, 2.5f, 5), new Vector3(-1, 5f, 5),
+    new Vector3(1, 2.5f, 5), new Vector3(1, 5f, 5)};
 
 
     public static void Init(GameObject TextPrefab)
@@ -99,10 +100,8 @@ public static class ConversationManager
                 DisplayBubble(currentPhrase.IncrementBubble());
             else if (currentBox.GetNumOfPhrases() > 0)
                 SetPhrase(currentBox.IncrementPhrase());
-            else if (currentTree.HasMoreBoxes())
-            {
-                SetBox(currentTree.IncrementBox());
-            }
+            else if(!responsesOnScreen)
+                DisplayPlayerResponses();
             //else
                 //DisplayPlayerResponses();
         }
@@ -110,10 +109,10 @@ public static class ConversationManager
 
     public static void ChooseResponse(int num)
     {
-        if (num > responsesDisplayed.Count)
+        if (num >= responsesDisplayed.Count || !inConversation)
             return;
-        HardClearScreen();
         SetBox(DialogueFileLoader.GetDialogueTree(partner.GetTreeID()).GetDialogueBox(responsesDisplayed[num].GetChildID()));
+        responsesOnScreen = false;
     }
 
     public static void SetBox(DialogueBox box)
@@ -166,20 +165,24 @@ public static class ConversationManager
             DisplayBubble(bubbleInfo.GetInterrupt());
         }
 
+
+        DialogueBubbleDisplay bubbleDisp = newBubble.GetComponent<DialogueBubbleDisplay>();
         if (bubbleInfo is PlayerResponse)
         {
             newBubble.transform.parent = player.transform;
             responsesDisplayed.Add((PlayerResponse)bubbleInfo);
+            newBubble.transform.LookAt(new Vector3(player.transform.position.x, player.transform.position.y + 5, player.transform.position.z));
+            PlayerResponse tempResponse = (PlayerResponse)bubbleInfo;
+            tempResponse.SetLocation(responsesDisplayed.Count - 1);
+            bubbleDisp.SetInfo(bubbleInfo, responsePositions[responsesDisplayed.Count - 1]);
         }
         else
-        {            
+        {
             newBubble.transform.parent = partner.GetHeadTransform();
             newBubble.transform.LookAt(new Vector3(player.transform.position.x, player.transform.position.y + 5, player.transform.position.z));
             newBubble.transform.Rotate(new Vector3(-90, 90, 90));
+            bubbleDisp.SetInfo(bubbleInfo, positions[bubbleInfo.GetLocation()]);
         }
-
-        DialogueBubbleDisplay bubbleDisp = newBubble.GetComponent<DialogueBubbleDisplay>();
-        bubbleDisp.SetInfo(bubbleInfo, positions[bubbleInfo.location]);
         currentBubble = bubbleDisp;
         bubblesOnScreen[currentPhraseIndex].Add(bubbleDisp);
     }
@@ -191,6 +194,7 @@ public static class ConversationManager
             if(!pr.isInterrupt.Key)
                 DisplayBubble(pr);
         }
+        responsesOnScreen = true;
     }
 
     private static void SoftClearScreen()
@@ -202,7 +206,6 @@ public static class ConversationManager
               bubblesOnScreen[currentPhraseIndex - 1][i].GetComponent<DialogueBubbleDisplay>().ResetBubble();
         }
         bubblesOnScreen[currentPhraseIndex - 1].Clear();
-        responsesDisplayed.Clear();
     }
     private static void HardClearScreen()
     {
