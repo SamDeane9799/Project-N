@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         if(scene.name == "SampleScene")
         {
             playerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-            DialogueFileLoader.LoadDialogueTrees(scene.name);
+            DialogueFileLoader.LoadDialogueTrees();
             ConversationManager.Init(textPrefab);
             //AssetLoader.LoadSprites();
         }

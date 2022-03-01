@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     private bool inNPC;
@@ -16,8 +17,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            ConversationManager.ChooseResponse(0);
+        var keyboard = Keyboard.current;
+        if (keyboard.digit1Key.wasPressedThisFrame)
+            ConversationManager.ChooseResponse(1);
     }
 
     private void OnTriggerEnter(Collider other)

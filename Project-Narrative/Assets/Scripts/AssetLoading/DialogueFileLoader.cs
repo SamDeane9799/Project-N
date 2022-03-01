@@ -15,9 +15,14 @@ public static class DialogueFileLoader
         return dialogueTrees[ID];
     }
 
-    public static void LoadDialogueTrees(string sceneName)
+    public static Dictionary<short, DialogueTree> GetDialogueTrees()
     {
-        string resourcePath = Application.streamingAssetsPath + Path.DirectorySeparatorChar + sceneName;
+        return dialogueTrees;
+    }
+
+    public static void LoadDialogueTrees()
+    {
+        string resourcePath = Application.streamingAssetsPath + Path.DirectorySeparatorChar + "DialogueTrees";
         string[] resourceFiles = Directory.GetFiles(resourcePath);
         foreach (string path in resourceFiles)
         {
@@ -66,7 +71,7 @@ public static class DialogueFileLoader
                 dialogueBoxes.Add(boxObject.Value<short>("id"), new DialogueBox(boxObject.Value<short>("id"), boxPhrases, playerResponses, boxObject.Value<int>("animation")));
             }
             DialogueTree newTree = new DialogueTree(dialogueBoxes, treeObject[0].Value<string>("description"));
-            dialogueTrees[treeObject[0].Value<short>("id")] = newTree;
+            dialogueTrees.Add(treeObject[0].Value<short>("id"), newTree);
         }
     }
 

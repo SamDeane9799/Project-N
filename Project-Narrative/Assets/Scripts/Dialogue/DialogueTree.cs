@@ -23,6 +23,11 @@ public class DialogueTree
         return tiers;
     }
 
+    public string GetDescription()
+    {
+        return description;
+    }
+
     public DialogueBox GetDialogueBox(short id)
     {
         currentID = id;
