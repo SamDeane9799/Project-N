@@ -25,8 +25,8 @@ public class DialogueBox
     //Go through all our responses and add their child dialogue box to the list
     private short[] GetChildrenIDs()
     {
-        List<short>childrenIDs = new List<short>();
-        foreach(PlayerResponse pr in responses)
+        List<short> childrenIDs = new List<short>();
+        foreach (PlayerResponse pr in responses)
         {
             childrenIDs.Add(pr.GetChildID());
         }
@@ -46,6 +46,11 @@ public class DialogueBox
     public void AddParentID(short id)
     {
         parentIDs.Add(id);
+    }
+
+    public short GetID()
+    {
+        return ID;
     }
 
     public int GetNumOfPhrases()

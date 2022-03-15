@@ -36,7 +36,8 @@ public static class DialogueFileLoader
             for (int i = 1; i < treeObject.Count; i++)
             {
                 JObject boxObject = (JObject)treeObject[i];
-
+                if (boxObject.Count <= 0)
+                    continue;
                 JArray phrases = boxObject.Value<JArray>("phrases");
                 List<Phrase> boxPhrases = new List<Phrase>();
                 JArray responses = boxObject.Value<JArray>("responses");
@@ -85,5 +86,15 @@ public static class DialogueFileLoader
     {
         string[] parts = toVector.Split(',');
         return new Vector3(float.Parse(parts[0]), float.Parse(parts[1]), float.Parse(parts[2]));
+    }
+
+    public static void RemoveTree(short id)
+    {
+        dialogueTrees.Remove(id);
+    }
+
+    public static void AddTree(short id, DialogueTree newID)
+    {
+
     }
 }

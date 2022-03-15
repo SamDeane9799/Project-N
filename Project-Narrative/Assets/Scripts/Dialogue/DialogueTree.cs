@@ -17,6 +17,14 @@ public class DialogueTree
         CalcTiers();
         CalcParents();
     }
+    public DialogueTree(string Description)
+    {
+        dialogueBoxes = new Dictionary<short, DialogueBox>();
+        description = Description;
+        currentID = -1;
+        CalcTiers();
+        CalcParents();
+    }
 
     public int GetTiers()
     {

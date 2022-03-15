@@ -38,6 +38,8 @@ public class TreeDisplay : MonoBehaviour
 
     private void DeleteButton()
     {
-        File.Delete(Application.streamingAssetsPath + Path.AltDirectorySeparatorChar + textToSet[0] + ".dlt");
+        File.Delete(Application.streamingAssetsPath + Path.AltDirectorySeparatorChar + "DialogueTrees" + Path.AltDirectorySeparatorChar + textToSet[0] + ".dlt");
+        DialogueFileLoader.RemoveTree(short.Parse(textToSet[0]));
+        Destroy(gameObject);
     }
 }
