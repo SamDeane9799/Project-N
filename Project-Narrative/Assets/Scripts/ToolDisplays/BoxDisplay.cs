@@ -33,10 +33,15 @@ public class BoxDisplay : MonoBehaviour
     private void ChangeDisplay()
     {
         desc.text += myBox.GetNumOfPhrases().ToString();
-        ID.text = myBox.GetID().ToString();
+        ID.text = "ID: " + myBox.GetID().ToString();
+        List<short> idsAdded = new List<short>();
         foreach(short id in myBox.childIDs)
         {
-            childIDs.text += id.ToString();
+            if (!idsAdded.Contains(id))
+            {
+                idsAdded.Add(id);
+                childIDs.text += id.ToString() + ", ";
+            }
         }
     }
 

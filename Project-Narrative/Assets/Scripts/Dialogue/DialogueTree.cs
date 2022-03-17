@@ -26,6 +26,18 @@ public class DialogueTree
         CalcParents();
     }
 
+    public DialogueBox[] GetDialogueBoxes()
+    {
+        DialogueBox[] boxes = new DialogueBox[dialogueBoxes.Count];
+        int i = 0;
+        foreach (KeyValuePair<short, DialogueBox> kvp in dialogueBoxes)
+        {
+            boxes[i] = kvp.Value;
+            i++;
+        }
+        return boxes;   
+    }
+
     public int GetTiers()
     {
         return tiers;

@@ -23,6 +23,11 @@ public class TreeDisplay : MonoBehaviour
         deleteButton.onClick.AddListener(DeleteButton);
     }
 
+
+    public short GetID()
+    {
+        return short.Parse(textToSet[0]);
+    }
     // Update is called once per frame
     void Update()
     {

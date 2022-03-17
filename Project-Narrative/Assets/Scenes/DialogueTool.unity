@@ -665,7 +665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &857682858
 RectTransform:
   m_ObjectHideFlags: 0
@@ -698,7 +698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.8666667}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7529412}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1138,8 +1138,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ca9fa319c07e4458acf086d5bc7a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 1759736248}
+  treePanel: {fileID: 1759736248}
+  boxPanel: {fileID: 857682857}
   treeDispPrefab: {fileID: 5640602697246433706, guid: 6d29b5677eca3ab45a4ac59b5f4f5442, type: 3}
+  boxDispPrefab: {fileID: 7665499782791843897, guid: dcd588b441d02c449825d4d37a3b5f65, type: 3}
   createTreeButton: {fileID: 2132784072}
   idInput: {fileID: 1782808988}
   descInput: {fileID: 1178457670}
@@ -1333,7 +1335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1759736249
 RectTransform:
   m_ObjectHideFlags: 0
