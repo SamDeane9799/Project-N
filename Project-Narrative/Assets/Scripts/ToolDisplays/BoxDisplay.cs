@@ -50,14 +50,24 @@ public class BoxDisplay : MonoBehaviour
         myBox = box;
     }
 
-    public void SetOpenAndDeleteMethod(UnityEngine.Events.UnityAction openMethod, UnityEngine.Events.UnityAction deleteMethod)
+    /*    public void SetOpenAndDeleteMethod(UnityEngine.Events.UnityAction openMethod, UnityEngine.Events.UnityAction deleteMethod)
+        {
+            openButton.onClick.AddListener(openMethod);
+            deleteButton.onClick.AddListener(deleteMethod);
+        }*/
+
+    public void SetDeleteMethod(UnityEngine.Events.UnityAction deleteMethod)
     {
-        openButton.onClick.AddListener(openMethod);
         deleteButton.onClick.AddListener(deleteMethod);
     }
 
     public short GetID()
     {
         return myBox.GetID();
+    }
+
+    public void DestroyMe()
+    {
+        Destroy(gameObject);
     }
 }

@@ -1,1 +1,14 @@
-[{"description":"test","id":2},{}]
+[
+  {
+    "description": "test",
+    "id": 2
+  },
+  {},
+  {
+    "id": 1,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [],
+    "phrases": []
+  }
+]

@@ -11,6 +11,8 @@ public class TreeDisplay : MonoBehaviour
     public Text[] textBoxes;
     [SerializeField]
     private Button deleteButton;
+    [SerializeField]
+    private Button openButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +21,6 @@ public class TreeDisplay : MonoBehaviour
             textBoxes[i].text = textToSet[i];
         }
         transform.localScale = new Vector3(1, 1, 1);
-
-        deleteButton.onClick.AddListener(DeleteButton);
     }
 
 
@@ -34,13 +34,18 @@ public class TreeDisplay : MonoBehaviour
         
     }
 
-    public void Init(string id, string desc, string levels)
+    public void Init(string id, string desc, string levels, UnityEngine.Events.UnityAction openMethod)
     {
         textToSet[0] = id;
         textToSet[1] = desc;
         textToSet[2] = levels;
+        SetOpenAndDeleteMethod(openMethod);
     }
-
+    public void SetOpenAndDeleteMethod(UnityEngine.Events.UnityAction openMethod)
+    {
+        openButton.onClick.AddListener(openMethod);
+        deleteButton.onClick.AddListener(DeleteButton);
+    }
     private void DeleteButton()
     {
         File.Delete(Application.streamingAssetsPath + Path.AltDirectorySeparatorChar + "DialogueTrees" + Path.AltDirectorySeparatorChar + textToSet[0] + ".dlt");

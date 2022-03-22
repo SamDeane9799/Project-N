@@ -1,0 +1,27 @@
+[
+  {
+    "description": "hi",
+    "id": 4
+  },
+  {
+    "id": 0,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [],
+    "phrases": []
+  },
+  {
+    "id": 1,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [],
+    "phrases": []
+  },
+  {
+    "id": 2,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [],
+    "phrases": []
+  }
+]

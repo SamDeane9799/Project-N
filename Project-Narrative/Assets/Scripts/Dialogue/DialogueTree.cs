@@ -89,6 +89,15 @@ public class DialogueTree
         return dialogueBoxes.ContainsKey((short)(currentID + 1));
     }
 
+    public void AddDialogueBox(DialogueBox box)
+    {
+        dialogueBoxes.Add(box.GetID(), box);
+    }
+    public void RemoveDialogueBox(short boxID)
+    {
+        dialogueBoxes.Remove(boxID);
+    }
+
     //TODO: Given the tree's current dialogue boxes go through and find out how many tiers there are
     private int CalcTiers()
     {

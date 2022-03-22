@@ -27,9 +27,16 @@ public class ToolManager : MonoBehaviour
     [SerializeField]
     private InputField descInput;
     [SerializeField]
+    private Button createBoxButton;
+    [SerializeField]
+    private InputField boxIDInput;
+    [SerializeField]
     private Text errorOutput;
+    [SerializeField]
+    private Text boxErrorOutput;
 
     private JArray treeJson;
+    private short treeID;
     private JObject boxJson;
 
     // Start is called before the first frame update
@@ -37,18 +44,24 @@ public class ToolManager : MonoBehaviour
     {
         DialogueFileLoader.LoadDialogueTrees();
         trees = DialogueFileLoader.GetDialogueTrees();
-        panelTracker.Push(treePanel);
-        panelTracker.Peek().SetActive(true);
-        foreach(KeyValuePair<short, DialogueTree> kvp in trees)
+        treePanel.SetActive(true);
+        boxPanel.SetActive(true);
+        foreach (KeyValuePair<short, DialogueTree> kvp in trees)
         {
             DisplayNewDialogueTree(kvp.Value, kvp.Key);
         }
-        GameObject[] openButtons = GameObject.FindGameObjectsWithTag("OpenButton");
-        foreach(GameObject btn in openButtons)
-        {
-            btn.GetComponent<Button>().onClick.AddListener(OpenDialogueTree);
-        }
         createTreeButton.onClick.AddListener(CreateNewDialogueTree);
+        createBoxButton.onClick.AddListener(CreateDialogueBox);
+
+        GameObject[] backButtons = GameObject.FindGameObjectsWithTag("BackButton");
+        foreach(GameObject btn in backButtons)
+        {
+            btn.GetComponent<Button>().onClick.AddListener(BackButton);
+        }
+        treePanel.SetActive(false);
+        boxPanel.SetActive(false);
+        panelTracker.Push(treePanel);
+        panelTracker.Peek().SetActive(true);
     }
 
     // Update is called once per frame
@@ -80,8 +93,6 @@ public class ToolManager : MonoBehaviour
         jsonWriter.WritePropertyName("id");
         jsonWriter.WriteValue(id);
         jsonWriter.WriteEndObject();
-        jsonWriter.WriteStartObject();
-        jsonWriter.WriteEndObject();
         jsonWriter.WriteEndArray();
         jsonWriter.Close();
 
@@ -93,21 +104,14 @@ public class ToolManager : MonoBehaviour
     {
         TreeDisplay treeDisplay = Instantiate<TreeDisplay>(treeDispPrefab);
         treeDisplay.transform.SetParent(treePanel.transform);
-        treeDisplay.Init(id.ToString(), dtree.GetDescription(), "0");
+        treeDisplay.Init(id.ToString(), dtree.GetDescription(), "0", OpenDialogueTree);
         treeDisplay.transform.localPosition = new Vector3(-315, -(id * 30) + 125, 0);
-    }
-
-
-    private void DeleteDialogueBox()
-    {
-        short id = EventSystem.current.gameObject.GetComponent<BoxDisplay>().GetID();
-
-
     }
 
     private void OpenDialogueTree()
     {
         short id = EventSystem.current.currentSelectedGameObject.transform.parent.GetComponent<TreeDisplay>().GetID();
+        treeID = id;
 
         string path = Application.streamingAssetsPath + Path.DirectorySeparatorChar + "DialogueTrees" + Path.DirectorySeparatorChar + id + ".dlt";
 
@@ -133,6 +137,97 @@ public class ToolManager : MonoBehaviour
         newDisplay.SetDialogueBox(box);
         newDisplay.transform.SetParent(boxPanel.transform);
 
-        newDisplay.transform.localPosition = new Vector3(-285 + (box.GetID() * 130), 165 + ((int)(box.GetID() / 5) * 200), 0); 
+        newDisplay.transform.localPosition = new Vector3(-285 + (box.GetID() * 130), 125 + ((int)(box.GetID() / 5) * 200), 0);
+
+        newDisplay.SetDeleteMethod(DeleteDialogueBox);
+    }
+
+    private void DeleteDialogueBox()
+    {
+        short id = EventSystem.current.currentSelectedGameObject.transform.parent.GetComponent<BoxDisplay>().GetID();
+        for(int i = 1; i < treeJson.Count; i++)
+        {
+            JToken currentObj = treeJson[i];
+            if(currentObj.Value<short>("id") == id)
+            {
+                treeJson.RemoveAt(i);
+                EventSystem.current.currentSelectedGameObject.transform.parent.GetComponent<BoxDisplay>().DestroyMe();
+                SerializeTree();
+                DialogueFileLoader.GetDialogueTree(treeID).RemoveDialogueBox(id);
+                return;
+            }
+        }
+    }
+
+    private void CreateDialogueBox()
+    {
+        short id = -1;
+
+        if (!short.TryParse(boxIDInput.text, out id) || TreeContainsID(id))
+        {
+            boxErrorOutput.text = "Invalid Dialogue Box ID.";
+            return;
+        }
+
+        DialogueBox newBox = new DialogueBox(id);
+
+        JsonWriter writer = treeJson.CreateWriter();
+        writer.WriteStartObject();
+        writer.WritePropertyName("id");
+        writer.WriteValue(id);
+        writer.WritePropertyName("entry_time");
+        writer.WriteValue(2);
+        writer.WritePropertyName("animation_id");
+        writer.WriteValue(-1);
+        writer.WritePropertyName("responses");
+        writer.WriteStartArray();
+        writer.WriteEndArray();
+        writer.WritePropertyName("phrases");
+        writer.WriteStartArray();
+        writer.WriteEndArray();
+        writer.WriteEndObject();
+
+        SerializeTree();
+
+        DialogueFileLoader.GetDialogueTree(treeID).AddDialogueBox(newBox);
+
+        DisplayDialogueBox(newBox);
+
+    }
+
+    private bool TreeContainsID(short id)
+    {
+        for(int i = 1; i < treeJson.Count; i++)
+        {
+            if (treeJson[i].Value<short>("id") == id)
+                return true;
+        }
+        return false;
+    }
+
+    private void SerializeTree()
+    {
+        StreamWriter writer = new StreamWriter(Application.streamingAssetsPath + Path.DirectorySeparatorChar + "DialogueTrees" + Path.DirectorySeparatorChar + treeID + ".dlt", false);
+        writer.Write(treeJson.ToString());
+        writer.Close();
+    }
+
+    private void BackButton()
+    {
+        string pageNum = panelTracker.Peek().name;
+
+        if(pageNum == "Page2")
+        {
+            treeJson = null;
+            treeID = -1;
+            BoxDisplay[] boxes = GameObject.FindObjectsOfType<BoxDisplay>();
+            for(int i = 0; i < boxes.Length; i++)
+            {
+                boxes[i].DestroyMe();
+            }
+
+            panelTracker.Pop().SetActive(false);
+            panelTracker.Peek().SetActive(true);
+        }
     }
 }

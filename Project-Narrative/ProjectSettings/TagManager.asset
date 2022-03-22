@@ -6,7 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - NPC
-  - OpenButton
+  - BackButton
   layers:
   - Default
   - TransparentFX

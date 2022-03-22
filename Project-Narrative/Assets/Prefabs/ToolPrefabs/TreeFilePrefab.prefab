@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3104318997604845551}
   m_Layer: 5
   m_Name: OpenTree
-  m_TagString: OpenButton
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -300,6 +300,7 @@ MonoBehaviour:
   - {fileID: 8879231879658462084}
   - {fileID: 7433600101475517992}
   deleteButton: {fileID: 6476379191855759825}
+  openButton: {fileID: 3104318997604845551}
 --- !u!1 &5357747150134120865
 GameObject:
   m_ObjectHideFlags: 0

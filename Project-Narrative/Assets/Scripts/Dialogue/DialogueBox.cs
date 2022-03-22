@@ -21,6 +21,18 @@ public class DialogueBox
         parentIDs = new List<short>();
         childIDs = GetChildrenIDs();
     }
+    public DialogueBox(short boxID)
+    {
+        ID = boxID;
+        phrases = new List<Phrase>();
+        responses = new PlayerResponse[12];
+        animationID = -1;
+        parentIDs = new List<short>();
+        if (responses[0] != null)
+            childIDs = GetChildrenIDs();
+        else
+            childIDs = new short[12];
+    }
 
     //Go through all our responses and add their child dialogue box to the list
     private short[] GetChildrenIDs()
