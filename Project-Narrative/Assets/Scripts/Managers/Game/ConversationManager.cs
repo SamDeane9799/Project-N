@@ -42,8 +42,8 @@ public static class ConversationManager
     new Vector3(10f, -7.5f, 0),new Vector3(0, -15, 0), new Vector3(-10f, -7.5f, 0),
     new Vector3(-15, 0, 0), new Vector3(-10f, 7.5f, 0) };
     private static Vector3[] responsePositions = {
-    new Vector3(-1, 2.5f, 5), new Vector3(-1, 5f, 5),
-    new Vector3(1, 2.5f, 5), new Vector3(1, 5f, 5)};
+    new Vector3(-1, 5f, 5), new Vector3(1, 5f, 5),
+    new Vector3(-1, 2.5f, 5), new Vector3(1, 2.5f, 5)};
 
 
     public static void Init(GameObject TextPrefab)
@@ -109,9 +109,10 @@ public static class ConversationManager
 
     public static void ChooseResponse(int num)
     {
-        if (num >= responsesDisplayed.Count || !inConversation)
+        if (num > responsesDisplayed.Count || !inConversation)
             return;
-        SetBox(DialogueFileLoader.GetDialogueTree(partner.GetTreeID()).GetDialogueBox(responsesDisplayed[num].GetChildID()));
+        DialogueBox boxToSet = DialogueFileLoader.GetDialogueTree(partner.GetTreeID()).GetDialogueBox(responsesDisplayed[num - 1].GetChildID());
+        SetBox(boxToSet);
         responsesOnScreen = false;
     }
 
@@ -222,6 +223,7 @@ public static class ConversationManager
             bubblesOnScreen[i].Clear();
         }
         responsesDisplayed.Clear();
+        responsesOnScreen = false;
     }
 
     private static void CreatePool()

@@ -11,32 +11,16 @@
       {
         "priority": "10",
         "trait": "abrasive",
-        "is_interrupt": "true,1",
-        "type": "professional",
-        "child": "001",
-        "text": "lol",
-        "background_texture": "bubble",
-        "background_color": "0, 0, 0",
-        "background_animation": "0",
-        "text_animation": "0",
-        "text_color": "256, 256, 256",
-        "scale": "1, 1, 1",
-        "rotation": "0, 0, 0",
-        "entry_time": 2
-      },
-      {
-        "priority": "10",
-        "trait": "abrasive",
         "is_interrupt": "false,0",
         "type": "professional",
         "child": "001",
-        "text": "ok?",
+        "text": "They're good!",
         "background_texture": "bubble",
         "background_color": "0, 0, 0",
         "background_animation": "0",
         "text_animation": "0",
         "text_color": "256, 256, 256",
-        "scale": "1, 1, 1",
+        "scale": ".75, .75, .75",
         "rotation": "0, 0, 0",
         "entry_time": 2
       },
@@ -45,14 +29,14 @@
         "trait": "abrasive",
         "is_interrupt": "false,0",
         "type": "professional",
-        "child": "001",
-        "text": "lol",
+        "child": "002",
+        "text": "They suck",
         "background_texture": "bubble",
         "background_color": "0, 0, 0",
         "background_animation": "0",
         "text_animation": "0",
         "text_color": "256, 256, 256",
-        "scale": "1, 1, 1",
+        "scale": ".75, .75, .75",
         "rotation": "0, 0, 0",
         "entry_time": 2
       }
@@ -80,33 +64,33 @@
           "text_color": "0, 0, 0",
           "location": "3",
           "scale": ".8, .8, .8",
-          "rotation": "30, 0, 0",
+          "rotation": "0, 0, 0",
           "entry_time": 2
         }
       ],
       [
         {
-          "text": "I...",
+          "text": "This is more of a test to see what you think of the bubbles",
           "background_texture": "bubble",
           "background_color": "256, 256, 256",
           "background_animation": "0",
           "text_animation": "0",
           "text_color": "0, 0, 0",
-          "location": "1",
+          "location": "7",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
         },
         {
-          "text": "Don't really work",
+          "text": "So, what do you think?",
           "background_texture": "bubble",
           "background_color": "0, 0, 0",
           "background_animation": "0",
           "text_animation": "1",
           "text_color": "256, 256, 256",
-          "location": "3",
+          "location": "5",
           "scale": ".8, .8, .8",
-          "rotation": "30, 0, 0",
+          "rotation": "0, 0, 30",
           "entry_time": 2
         }
       ]
@@ -121,14 +105,14 @@
         "trait": "stupid",
         "is_interrupt": "false, 0",
         "type": "defensive",
-        "text": "Hi",
+        "child": "004",
+        "text": "No problem!",
         "background_texture": "bubble",
         "background_color": "256, 256, 256",
         "background_animation": "0",
         "text_animation": "0",
         "text_color": "0, 0, 0",
-        "location": "1",
-        "scale": "1, 1, 1",
+        "scale": ".75, .75, .75",
         "rotation": "0, 0, 0",
         "entry_time": 2
       }
@@ -136,16 +120,204 @@
     "phrases": [
       [
         {
-          "text": "Wait...",
+          "text": "Awesome!",
           "background_texture": "bubble",
-          "background_color": "256, 256, 256",
+          "background_color": ".5, .5, 0",
           "background_animation": "0",
           "text_animation": "0",
           "text_color": "256, 0, 0",
-          "location": "6",
+          "location": "7",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
+        },
+        {
+          "text": "Sorry about the lag, if it's still happening.",
+          "background_texture": "bubble",
+          "background_color": ".8, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "5",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 1
+        }
+      ]
+    ]
+  },
+  {
+    "id": "002",
+    "animation": 1,
+    "responses": [
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "003",
+        "text": "Uhhhh, sure!",
+        "background_texture": "bubble",
+        "background_color": "0, 0, 0",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": "0, .6, .1",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 1
+      }
+    ],
+    "phrases": [
+      [
+        {
+          "text": "Oh... ;(",
+          "background_texture": "bubble",
+          "background_color": ".85, .85, .85",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 180",
+          "location": "6",
+          "scale": "1, 1, 1",
+          "rotation": "0, 30, 0",
+          "entry_time": 2
+        },
+        {
+          "text": "I'm sorry to hear that...",
+          "background_texture": "bubble",
+          "background_color": ".85, .85, .85",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 1",
+          "location": "0",
+          "scale": ".6, .6, .6",
+          "rotation": "45, 0, 0",
+          "entry_time": 3
+        }
+      ],
+      [
+        {
+          "text": "HAHA!",
+          "background_texture": "bubble",
+          "background_color": ".2, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "1, 0, 0",
+          "location": "0",
+          "scale": "1.5, 1.5, 1.5",
+          "rotation": "30, 0, 0",
+          "entry_time": 1.5
+        }
+      ],
+      [
+        {
+          "text": "Well anyways let's forget about that!",
+          "background_texture": "bubble",
+          "background_color": "1, 1, 1",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, .5, 0",
+          "location": "0",
+          "scale": "1.2, 1.2, 1.2",
+          "rotation": "0, 0, 0",
+          "entry_time": 1
+        }
+      ]
+    ]
+  },
+  {
+    "id": "004",
+    "animation": 1,
+    "responses": [
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "003",
+        "text": "No problem :)",
+        "background_texture": "bubble",
+        "background_color": "1, 1, 1",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": "0, 0, 0",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 1
+      }
+    ],
+    "phrases": [
+      [
+        {
+          "text": "Yayyyyyyy!",
+          "background_texture": "bubble",
+          "background_color": "1, 1, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "7",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 1
+        },
+        {
+          "text": "Thank you I appreciate that :)",
+          "background_texture": "bubble",
+          "background_color": "1, 1, 1",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "1, 1, 0",
+          "location": "0",
+          "scale": "1.2, 1.2, 1.2",
+          "rotation": "20, 0, 0",
+          "entry_time": 3
+        }
+      ]
+    ]
+  },
+  {
+    "id": "003",
+    "animation": 1,
+    "responses": [
+    ],
+    "phrases": [
+      [
+        {
+          "text": "Well that's all I got for now!",
+          "background_texture": "bubble",
+          "background_color": "1, 1, 1",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "5",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },
+        {
+          "text": "Feel free to leave any feedback with Sam :)",
+          "background_texture": "bubble",
+          "background_color": ".85, .85, .85",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "1, 1, 0",
+          "location": "0",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+      ],
+      [
+        {
+          "text": "OK, YOU CAN WALK AWAY NOW I'M DONE WITH YOU",
+          "background_texture": "bubble",
+          "background_color": ".2, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "0",
+          "scale": "2, 2, 2",
+          "rotation": "45, 0, 0",
+          "entry_time": 5
         }
       ]
     ]

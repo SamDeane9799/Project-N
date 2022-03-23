@@ -20,6 +20,12 @@ public class Player : MonoBehaviour
         var keyboard = Keyboard.current;
         if (keyboard.digit1Key.wasPressedThisFrame)
             ConversationManager.ChooseResponse(1);
+        if (keyboard.digit2Key.wasPressedThisFrame)
+            ConversationManager.ChooseResponse(2);
+        if (keyboard.digit3Key.wasPressedThisFrame)
+            ConversationManager.ChooseResponse(3);
+        if (keyboard.digit4Key.wasPressedThisFrame)
+            ConversationManager.ChooseResponse(4);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -38,7 +44,6 @@ public class Player : MonoBehaviour
         if (other.TryGetComponent<NPC>(out potentialNPC))
         {
             inNPC = !inNPC;
-            interactUI.SetActive(inNPC);
             if (inNPC)
             {
                 potentialNPC.RotateTowards(transform.GetChild(0));
@@ -46,11 +51,11 @@ public class Player : MonoBehaviour
                 if (potentialNPC.GetHasDialogue())
                 {
                     ConversationManager.SetConversationPartners(potentialNPC);
-                }
+                }/*
                 else
                 {
                     interactUI.transform.GetChild(0).GetComponent<Text>().text = "Talk to " + potentialNPC.GetName();
-                }
+                }*/
             }
             else
             {

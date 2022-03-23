@@ -44,7 +44,7 @@ public class DialogueBubbleDisplay : MonoBehaviour
                 else
                 {
                     myText.text = myInfo.text;
-                    this.transform.localRotation = Quaternion.Euler(myInfo.rotation.x - 90, myInfo.rotation.y + 90, myInfo.rotation.z + 90);
+                    this.transform.localRotation = Quaternion.Euler(myInfo.rotation.x - 90, myInfo.rotation.y, myInfo.rotation.z + 180);
                 }
                 inView = true;
             }
