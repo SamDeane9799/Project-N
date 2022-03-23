@@ -37,7 +37,8 @@ public class ToolManager : MonoBehaviour
 
     private JArray treeJson;
     private short treeID;
-    private JObject boxJson;
+    private JToken boxJson;
+    private short boxID;
 
     // Start is called before the first frame update
     void Start()
@@ -117,6 +118,7 @@ public class ToolManager : MonoBehaviour
 
         StreamReader reader = new StreamReader(path);
         string jsonAsString = reader.ReadToEnd();
+        reader.Close();
         treeJson = JArray.Parse(jsonAsString);
 
         panelTracker.Peek().SetActive(false);
@@ -205,12 +207,7 @@ public class ToolManager : MonoBehaviour
         return false;
     }
 
-    private void SerializeTree()
-    {
-        StreamWriter writer = new StreamWriter(Application.streamingAssetsPath + Path.DirectorySeparatorChar + "DialogueTrees" + Path.DirectorySeparatorChar + treeID + ".dlt", false);
-        writer.Write(treeJson.ToString());
-        writer.Close();
-    }
+
 
     private void BackButton()
     {
@@ -229,5 +226,30 @@ public class ToolManager : MonoBehaviour
             panelTracker.Pop().SetActive(false);
             panelTracker.Peek().SetActive(true);
         }
+    }
+
+    private void OpenDialogueBoxe()
+    {
+        short id = EventSystem.current.currentSelectedGameObject.transform.parent.GetComponent<BoxDisplay>().GetID();
+        boxID = id;
+
+        for(int i = 1; i < treeJson.Count; i++)
+        {
+            if(treeJson[i].Value<short>("id") == id)
+            {
+                boxJson = treeJson[i];
+            }
+        }
+        if (boxJson == null)
+            return;
+
+        
+    }
+
+    private void SerializeTree()
+    {
+        StreamWriter writer = new StreamWriter(Application.streamingAssetsPath + Path.DirectorySeparatorChar + "DialogueTrees" + Path.DirectorySeparatorChar + treeID + ".dlt", false);
+        writer.Write(treeJson.ToString());
+        writer.Close();
     }
 }

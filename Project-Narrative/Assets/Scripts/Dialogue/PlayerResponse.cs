@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class PlayerResponse : DialogueBubble
 {
-    private int priority;
-    private Trait requiredTrait;
+    public int priority { get; }
+    public Trait requiredTrait { get; }
     public KeyValuePair<bool, int> isInterrupt { get; }
-    private ResponseType type;
-    private short childID;
+    public ResponseType type { get; }
+    public short childID { get; }
 
     public PlayerResponse(int Priority, Trait RequiredTrait, KeyValuePair<bool, int> IsInterrupt, ResponseType Type, short ChildID,
         string Text, string BackgroundTexture, int BackgroundAnimation, Vector3 BackgroundColor, Vector3 TextColor, int TextAnimation, Vector3 Scale, Vector3 Rotation, float EntryTime)
