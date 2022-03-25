@@ -277,8 +277,7 @@
   {
     "id": "003",
     "animation": 1,
-    "responses": [
-    ],
+    "responses": [],
     "phrases": [
       [
         {
@@ -321,5 +320,12 @@
         }
       ]
     ]
+  },
+  {
+    "id": 5,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [],
+    "phrases": []
   }
 ]

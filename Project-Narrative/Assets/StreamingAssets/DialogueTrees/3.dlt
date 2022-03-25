@@ -113,41 +113,10 @@
     ]
   },
   {
-    "id": "001",
-    "animation": 1,
-    "responses": [
-      {
-        "Priority": "5",
-        "trait": "stupid",
-        "is_interrupt": "false, 0",
-        "type": "defensive",
-        "text": "Hi",
-        "background_texture": "bubble",
-        "background_color": "256, 256, 256",
-        "background_animation": "0",
-        "text_animation": "0",
-        "text_color": "0, 0, 0",
-        "location": "1",
-        "scale": "1, 1, 1",
-        "rotation": "0, 0, 0",
-        "entry_time": 2
-      }
-    ],
-    "phrases": [
-      [
-        {
-          "text": "Wait...",
-          "background_texture": "bubble",
-          "background_color": "256, 256, 256",
-          "background_animation": "0",
-          "text_animation": "0",
-          "text_color": "256, 0, 0",
-          "location": "6",
-          "scale": "1, 1, 1",
-          "rotation": "0, 0, 0",
-          "entry_time": 2
-        }
-      ]
-    ]
+    "id": 1,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [],
+    "phrases": []
   }
 ]

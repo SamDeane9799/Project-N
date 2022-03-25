@@ -69,8 +69,13 @@ public class DialogueTree
             short[] childIDs = dialogueBoxes[db.Key].childIDs;
             foreach(short s in childIDs)
             {
-                if(s != -1)
-                    dialogueBoxes[s].AddParentID(db.Key);
+                if (s != -1)
+                {
+                    if (dialogueBoxes.ContainsKey(s))
+                        dialogueBoxes[s].AddParentID(db.Key);
+                    else
+                        Debug.LogWarning("Missing dialogue box " + s + " in Dialogue tree " + description);
+                }
             }
         }
     }

@@ -1962,6 +1962,10 @@ PrefabInstance:
       propertyPath: headTransform
       value: 
       objectReference: {fileID: 1111448304}
+    - target: {fileID: 2926384982105918943, guid: db7824414f0505341b02170a563c0ed9, type: 3}
+      propertyPath: interactionBoxRadius
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3392937714453954997, guid: db7824414f0505341b02170a563c0ed9, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -2332,6 +2336,18 @@ PrefabInstance:
     - target: {fileID: 395941918058817883, guid: 18c1a44eac857e94b8b18bbdead2d316, type: 3}
       propertyPath: m_Name
       value: PlayerCapsule
+      objectReference: {fileID: 0}
+    - target: {fileID: 395941918058817884, guid: 18c1a44eac857e94b8b18bbdead2d316, type: 3}
+      propertyPath: MoveSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 395941918058817884, guid: 18c1a44eac857e94b8b18bbdead2d316, type: 3}
+      propertyPath: SprintSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 395941918058817884, guid: 18c1a44eac857e94b8b18bbdead2d316, type: 3}
+      propertyPath: RotationSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1023860551557936097, guid: 18c1a44eac857e94b8b18bbdead2d316, type: 3}
       propertyPath: m_RootOrder
