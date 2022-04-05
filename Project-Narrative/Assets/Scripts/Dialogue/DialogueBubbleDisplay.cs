@@ -33,7 +33,9 @@ public class DialogueBubbleDisplay : MonoBehaviour
             {
                 transform.localPosition = nextPosition;
                 myText.color = new Color(myInfo.textColor.x, myInfo.textColor.y, myInfo.textColor.z);
-                gameObject.GetComponent<MeshRenderer>().material.color = new Color(myInfo.backgroundColor.x, myInfo.backgroundColor.y, myInfo.backgroundColor.z);
+                Material mat = gameObject.GetComponent<MeshRenderer>().material;
+                mat.color = new Color(myInfo.backgroundColor.x, myInfo.backgroundColor.y, myInfo.backgroundColor.z);
+                mat.mainTexture = AssetLoader.GetBubble(myInfo.backgroundTexture);
                 this.transform.localScale = myInfo.scale;
                 if (myInfo is PlayerResponse)
                 {

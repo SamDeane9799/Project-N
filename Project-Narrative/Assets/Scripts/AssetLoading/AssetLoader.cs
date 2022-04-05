@@ -5,33 +5,21 @@ using UnityEngine;
 
 public static class AssetLoader
 {
-    private static Dictionary<string, Sprite> bubbles = new Dictionary<string, Sprite>();
+    private static Dictionary<string, Texture> bubbles = new Dictionary<string, Texture>();
 
     public static void LoadSprites()
     {
-        string path = Application.streamingAssetsPath + "/" + "Resources" + "/" + "DialogueBubbles";
-        string[] files = Directory.GetFiles(path);
-        foreach(string file in files)
+        Texture[] textures = Resources.LoadAll<Texture>("DialogueBubbles");
+
+        foreach(Texture t in textures)
         {
-            if (Path.GetExtension(file) == ".png")
-            {
-                LoadSprite(Path.GetFileNameWithoutExtension(file));
-            }
+            bubbles.Add(t.name.ToLower(), t);
         }
     }
-
-    private static Sprite LoadSprite(string fileName)
+    public static Texture GetBubble(string fileName)
     {
-        string newPath = "DialogueBubbles/" + fileName;
-        Sprite spriteToAdd = Resources.Load<Sprite>(newPath);
-        bubbles.Add(fileName, spriteToAdd);
-        return spriteToAdd;
-    }
-
-    public static Sprite GetBubble(string fileName)
-    {
-        if (!bubbles.ContainsKey(fileName))
-            return LoadSprite(fileName);
-        return bubbles[fileName];
+        if(bubbles.ContainsKey(fileName))
+            return bubbles[fileName];
+        throw new System.Exception("Unable to find texture " + fileName);
     }
 }

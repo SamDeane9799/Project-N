@@ -17,6 +17,8 @@ public static class ConversationManager
     private static NPC partner;
     private static Player player;
 
+    private static Material bubbleMat;
+
     private static GameObject textPrefab;
     private static GameObject[] textObjects;
 
@@ -46,8 +48,9 @@ public static class ConversationManager
     new Vector3(-1, 2.5f, 5), new Vector3(1, 2.5f, 5)};
 
 
-    public static void Init(GameObject TextPrefab)
+    public static void Init(GameObject TextPrefab, Material mat)
     {
+        bubbleMat = mat;
         textPrefab = TextPrefab;
         CreatePool();
     }
@@ -236,6 +239,7 @@ public static class ConversationManager
             objectPool[i] = GameObject.CreatePrimitive(PrimitiveType.Plane);
             objectPool[i].transform.position = new Vector3(0, -1000, 0);
             objectPool[i].AddComponent<DialogueBubbleDisplay>().SetTextPrefab(textPrefab);
+            objectPool[i].GetComponent<MeshRenderer>().material = bubbleMat;
         }
     }
 }

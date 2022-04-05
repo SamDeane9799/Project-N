@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     private static Player playerRef;
     [SerializeField]
     private GameObject textPrefab;
+    [SerializeField]
+    private Material bubbleMat;
 
     // Start is called before the first frame update
     void Awake()
@@ -34,8 +36,8 @@ public class GameManager : MonoBehaviour
         {
             playerRef = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
             DialogueFileLoader.LoadDialogueTrees();
-            ConversationManager.Init(textPrefab);
-            //AssetLoader.LoadSprites();
+            ConversationManager.Init(textPrefab, bubbleMat);
+            AssetLoader.LoadSprites();
         }
     }
 }
