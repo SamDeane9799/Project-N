@@ -22,4 +22,11 @@ public static class AssetLoader
             return bubbles[fileName];
         throw new System.Exception("Unable to find texture " + fileName);
     }
+
+    public static string[] GetBubbleNames()
+    {
+        string[] names = new string[bubbles.Count];
+        bubbles.Keys.CopyTo(names, 0);
+        return names;
+    }
 }

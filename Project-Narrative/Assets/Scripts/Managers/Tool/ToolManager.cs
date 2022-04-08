@@ -63,6 +63,8 @@ public class ToolManager : MonoBehaviour
         boxPanel.SetActive(false);
         panelTracker.Push(treePanel);
         panelTracker.Peek().SetActive(true);
+
+        //AssetLoader.LoadSprites();
     }
 
     // Update is called once per frame
