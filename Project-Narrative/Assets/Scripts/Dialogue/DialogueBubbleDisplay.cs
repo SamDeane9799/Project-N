@@ -9,6 +9,7 @@ public class DialogueBubbleDisplay : MonoBehaviour
     private TextMeshPro myText;
     private DialogueBubble myInfo;
     private Vector3 nextPosition;
+    private AudioSource audioPlayer;
 
     private float timeActive;
     private float currentTime;
@@ -29,25 +30,30 @@ public class DialogueBubbleDisplay : MonoBehaviour
         if (!inView && myInfo != null)
         {
             currentTime += Time.deltaTime;
-            if(currentTime >= myInfo.entryTime)
+            float lerpValue = currentTime / myInfo.entryTime;
+            if(!(myInfo is PlayerResponse))
             {
-                transform.localPosition = nextPosition;
-                myText.color = new Color(myInfo.textColor.x, myInfo.textColor.y, myInfo.textColor.z);
-                Material mat = gameObject.GetComponent<MeshRenderer>().material;
-                mat.color = new Color(myInfo.backgroundColor.x, myInfo.backgroundColor.y, myInfo.backgroundColor.z);
-                mat.mainTexture = AssetLoader.GetBubble(myInfo.backgroundTexture);
+                this.transform.localPosition = Vector3.Lerp(new Vector3(0, 0, 0), nextPosition, lerpValue);
+                this.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), myInfo.scale, lerpValue);
+                int stringLength = (int)(lerpValue * (float)myInfo.text.Length);
+                myText.text = myInfo.text.Substring(0, stringLength);
+
+            }
+            if (currentTime >= myInfo.entryTime)
+            {
                 this.transform.localScale = myInfo.scale;
                 if (myInfo is PlayerResponse)
                 {
+                    this.transform.localPosition = nextPosition;
                     this.transform.localRotation = Quaternion.Euler(myInfo.rotation.x - 90, myInfo.rotation.y + 270, myInfo.rotation.z + 90);
                     this.transform.localScale = new Vector3(transform.localScale.x / 5f, transform.localScale.y / 5f, transform.localScale.z / 5f);
                     myText.text = myInfo.GetLocation() + 1 + ". " + myInfo.text;
                 }
                 else
                 {
-                    myText.text = myInfo.text;
                     this.transform.localRotation = Quaternion.Euler(myInfo.rotation.x - 90, myInfo.rotation.y, myInfo.rotation.z + 180);
                 }
+                audioPlayer.Play();
                 inView = true;
             }
             return;
@@ -61,15 +67,32 @@ public class DialogueBubbleDisplay : MonoBehaviour
         textPrefab = prefab;
     }
 
-    public void SetInfo(DialogueBubble info, Vector3 posToAdd)
+    public void SetInfo(DialogueBubble info, Vector3 posToAdd, AudioClip clip)
     {
         myInfo = info;
         nextPosition = posToAdd;
-    }
+        this.transform.localScale = new Vector3(0, 0, 0);
+        this.transform.localPosition = new Vector3(0, 0, 0);
+        if (!gameObject.TryGetComponent<AudioSource>(out audioPlayer))
+            audioPlayer = gameObject.AddComponent<AudioSource>();
+        audioPlayer.clip = clip;
+        audioPlayer.volume = .5f;
 
-    public void Init(GameObject prefab)
-    {
-        textPrefab = prefab;
+        if(info is PlayerResponse)
+        {
+            this.transform.localRotation = Quaternion.Euler(myInfo.rotation.x - 90, myInfo.rotation.y + 270, myInfo.rotation.z + 90);
+            myText.text = myInfo.text;
+        }
+        else
+        {
+            this.transform.localRotation = Quaternion.Euler(myInfo.rotation.x - 90, myInfo.rotation.y, myInfo.rotation.z + 180);
+            myText.text = "";
+        }
+
+        myText.color = new Color(myInfo.textColor.x, myInfo.textColor.y, myInfo.textColor.z);
+        Material mat = gameObject.GetComponent<MeshRenderer>().material;
+        mat.color = new Color(myInfo.backgroundColor.x, myInfo.backgroundColor.y, myInfo.backgroundColor.z);
+        mat.mainTexture = AssetLoader.GetBubble(myInfo.backgroundTexture);
     }
 
     public bool IsInView()

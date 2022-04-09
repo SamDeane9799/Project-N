@@ -1711,6 +1711,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 38f35ddf3f6dcbc488259f51cde48e26, type: 2}
     - target: {fileID: 648854932887519838, guid: b31994ca798ca7e49a97c6c84db76d77, type: 3}
+      propertyPath: bubbleClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 976115fcbc2ce4342b1bbe47034001b6, type: 3}
+    - target: {fileID: 648854932887519838, guid: b31994ca798ca7e49a97c6c84db76d77, type: 3}
       propertyPath: textPrefab
       value: 
       objectReference: {fileID: 5541114497133844343, guid: 5c8d9c8c959c7f14aacaba0c774f9203, type: 3}
