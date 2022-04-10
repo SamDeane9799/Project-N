@@ -32,10 +32,11 @@ public static class ConversationManager
     private static List<PlayerResponse> responsesDisplayed = new List<PlayerResponse>();
     private static int currentPhraseIndex = -1;
     private static bool phraseChanged;
-
+    private static AudioClip bubbleClip;
     private static int poolIndex;
     private const int MAX_NUM_OF_POOL = 12;
     private static GameObject[] objectPool;
+
 
     private static List<KeyValuePair<int, int>> interruptsOn = new List<KeyValuePair<int, int>>();
 
@@ -48,10 +49,11 @@ public static class ConversationManager
     new Vector3(-1, 2.5f, 5), new Vector3(1, 2.5f, 5)};
 
 
-    public static void Init(GameObject TextPrefab, Material mat)
+    public static void Init(GameObject TextPrefab, Material mat, AudioClip clip)
     {
         bubbleMat = mat;
         textPrefab = TextPrefab;
+        bubbleClip = clip;
         CreatePool();
     }
 
@@ -178,14 +180,14 @@ public static class ConversationManager
             newBubble.transform.LookAt(new Vector3(player.transform.position.x, player.transform.position.y + 5, player.transform.position.z));
             PlayerResponse tempResponse = (PlayerResponse)bubbleInfo;
             tempResponse.SetLocation(responsesDisplayed.Count - 1);
-            bubbleDisp.SetInfo(bubbleInfo, responsePositions[responsesDisplayed.Count - 1]);
+            bubbleDisp.SetInfo(bubbleInfo, responsePositions[responsesDisplayed.Count - 1], bubbleClip);
         }
         else
         {
             newBubble.transform.parent = partner.GetHeadTransform();
             newBubble.transform.LookAt(new Vector3(player.transform.position.x, player.transform.position.y + 5, player.transform.position.z));
             newBubble.transform.Rotate(new Vector3(-90, 90, 90));
-            bubbleDisp.SetInfo(bubbleInfo, positions[bubbleInfo.GetLocation()]);
+            bubbleDisp.SetInfo(bubbleInfo, positions[bubbleInfo.GetLocation()], bubbleClip);
         }
         currentBubble = bubbleDisp;
         bubblesOnScreen[currentPhraseIndex].Add(bubbleDisp);
