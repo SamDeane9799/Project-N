@@ -34,11 +34,17 @@ public class ToolManager : MonoBehaviour
     private Text errorOutput;
     [SerializeField]
     private Text boxErrorOutput;
+    [SerializeField]
+    private ResponseDisp responseDisp;
 
     private JArray treeJson;
     private short treeID;
     private JToken boxJson;
     private short boxID;
+
+    private int responsePhraseIndex;
+    private string responsePhraseSetting;
+    private int bubbleIndex;
 
     // Start is called before the first frame update
     void Start()
@@ -245,7 +251,32 @@ public class ToolManager : MonoBehaviour
         if (boxJson == null)
             return;
 
-        
+
+    }
+
+    public void UpdateResponseIndex(int index)
+    {
+        responsePhraseIndex = index;
+    }
+    public void UpdateBubbleIndex(int index)
+    {
+        bubbleIndex = index;
+    }
+
+    public void UpdateResponsePhraseSetting(int index)
+    {
+        responsePhraseSetting = EventSystem.current.GetComponent<Dropdown>().options[index].text;
+    }
+
+    public void SaveBubble()
+    {
+        if(responsePhraseSetting == "Response")
+        {
+            JArray responses = boxJson.Value<JArray>("responses");
+            JToken responseJson = responses[responsePhraseIndex];
+            PlayerResponse newResponse = responseDisp.GetAsResponse();
+            //Need to put new response into json
+        }
     }
 
     private void SerializeTree()

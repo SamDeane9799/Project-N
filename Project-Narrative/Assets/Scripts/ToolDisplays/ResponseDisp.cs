@@ -34,9 +34,32 @@ public class ResponseDisp : MonoBehaviour
     public V3Display scale;
     public V3Display textColor;
     public V3Display rotation;
+
+    private bool dirty;
+
     void Start()
     {
-        
+        InputField[] fields = GameObject.FindObjectsOfType<InputField>();
+        for(int i = 0; i < fields.Length; i++)
+        {
+            fields[i].onValueChanged.AddListener(OnChangeInputField);
+        }
+
+        Dropdown[] dropdowns = GameObject.FindObjectsOfType<Dropdown>();
+        for(int i = 0; i < dropdowns.Length; i++)
+        {
+            dropdowns[i].onValueChanged.AddListener(OnChangeDropdownField);
+        }
+
+        V3Display[] v3Displays = GameObject.FindObjectsOfType<V3Display>();
+        for(int i = 0; i < v3Displays.Length; i++)
+        {
+            InputField[] inputFields = v3Displays[i].GetInputFields();
+            for(int j = 0; j < inputFields.Length; j++)
+            {
+                inputFields[j].onValueChanged.AddListener(OnChangeInputField);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -81,6 +104,16 @@ public class ResponseDisp : MonoBehaviour
         SetV3ToVector(textColor, responseToDisp.textColor);
         SetV3ToVector(rotation, responseToDisp.rotation);
 
+        dirty = false;
+    }
+
+    public PlayerResponse GetAsResponse()
+    {
+        PlayerResponse response = new PlayerResponse(int.Parse(priorityInput.text), (Trait)traitInputField.value, new KeyValuePair<bool, int>(bool.Parse(isInterruptDropdown.options[isInterruptDropdown.value].text), int.Parse(isInterruptInputField.text)),
+            (ResponseType)typeInputField.value, short.Parse(childIDInput.text), textInputField.text, backgroundOptions.options[backgroundOptions.value].text, int.Parse(backgroundAnimationInput.text),
+            backgroundColor.GetVector(), textColor.GetVector(), int.Parse(textAnimationInput.text), scale.GetVector(), rotation.GetVector(), float.Parse(entryTimeInput.text));
+
+        return response;
     }
 
     private int IndexOfArray(string[] array, string name)
@@ -98,5 +131,15 @@ public class ResponseDisp : MonoBehaviour
         disp[0] = vector.x.ToString();
         disp[1] = vector.y.ToString();
         disp[2] = vector.z.ToString();
+    }
+
+    private void OnChangeInputField(string newVal)
+    {
+        dirty = true;
+    }
+
+    private void OnChangeDropdownField(int val)
+    {
+        dirty = true;
     }
 }
