@@ -1,0 +1,1591 @@
+[
+  {
+    "description": "Main Tree for one shot dialogue",
+    "id": 2
+  },
+  {
+    "id": 0,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      }
+      ],
+    "phrases": [
+    [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ],
+    [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ]
+    ]
+  },
+  {
+    "id": 1,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      }
+    ],
+    "phrases": [ [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ],
+    [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ]
+    ]
+  },
+  {
+    "id": 2,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [{
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      }],
+    "phrases": [ [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ],
+    [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ]
+    ]
+  },
+  {
+    "id": 3,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [{
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      }],
+    "phrases": [
+       [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ],
+    [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ]
+    ]
+  },
+  {
+    "id": 4,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [{
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      }],
+    "phrases": [
+       [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ],
+    [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ]
+    ]
+  },
+  {
+    "id": 5,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [{
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      }],
+    "phrases": [
+       [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ],
+    [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ]
+    ]
+  },
+  {
+    "id": 6,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      }
+    ],
+    "phrases": [
+       [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ],
+    [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ]
+    ]
+  },
+  {
+    "id": 7,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      }
+    ],
+    "phrases": [
+       [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ],
+    [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ]
+    ]
+  },
+  {
+    "id": 8,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      }
+    ],
+    "phrases": [
+       [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ],
+    [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ]
+    ]
+  },
+  {
+    "id": 9,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      }
+    ],
+    "phrases": [
+       [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ],
+    [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ]
+    ]
+  },
+  {
+    "id": 10,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "001",
+        "text": "",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      }
+    ],
+    "phrases": [
+       [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ],
+    [
+      {
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },{
+          "text": "",
+          "background_texture": "bubble",
+          "background_color": "0, 0, 0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "256, 256, 256",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+    ]
+    ]
+  }
+]

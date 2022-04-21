@@ -107,8 +107,6 @@ public static class ConversationManager
                 SetPhrase(currentBox.IncrementPhrase());
             else if(!responsesOnScreen)
                 DisplayPlayerResponses();
-            //else
-                //DisplayPlayerResponses();
         }
     }
 

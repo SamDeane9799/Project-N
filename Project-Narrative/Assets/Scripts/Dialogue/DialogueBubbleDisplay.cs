@@ -9,12 +9,22 @@ public class DialogueBubbleDisplay : MonoBehaviour
     private TextMeshPro myText;
     private DialogueBubble myInfo;
     private Vector3 nextPosition;
+    private Vector3 initialForward;
     private AudioSource audioPlayer;
 
     private float timeActive;
+    private float animationTimer;
     private float currentTime;
+    private float sizeScale;
+    private float textTimer;
+
+    private int textIndex;
 
     private bool inView = false;
+    private bool isResponse;
+    private bool rotatingClockwise;
+
+    private float[] sizes = { 1.0f, .7f, 0.4f };
     // Start is called before the first frame update
     void Start()
     {
@@ -27,39 +37,53 @@ public class DialogueBubbleDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!inView && myInfo != null)
+        if (isResponse && inView)
+            ResponseAnimate();
+
+        textTimer += Time.deltaTime;
+        if (myInfo != null)
         {
-            currentTime += Time.deltaTime;
-            float lerpValue = currentTime / myInfo.entryTime;
-            if(!(myInfo is PlayerResponse))
+            if (textIndex < myInfo.text.Length && textTimer >= 0.05f && !isResponse)
             {
-                this.transform.localPosition = Vector3.Lerp(new Vector3(0, 0, 0), nextPosition, lerpValue);
-                this.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), myInfo.scale, lerpValue);
-                int stringLength = (int)(lerpValue * (float)myInfo.text.Length);
-                myText.text = myInfo.text.Substring(0, stringLength);
+                textIndex++;
+                textTimer = 0;
+                myText.text = myInfo.text.Substring(0, textIndex);
+            }
+            if (!inView)
+            {
+                currentTime += Time.deltaTime;
+                float lerpValue = currentTime / myInfo.entryTime;
 
-            }
-            if (currentTime >= myInfo.entryTime)
-            {
-                this.transform.localScale = myInfo.scale;
-                if (myInfo is PlayerResponse)
+                if (!isResponse)
                 {
-                    this.transform.localPosition = nextPosition;
-                    this.transform.localRotation = Quaternion.Euler(myInfo.rotation.x - 90, myInfo.rotation.y + 270, myInfo.rotation.z + 90);
-                    this.transform.localScale = new Vector3(transform.localScale.x / 5f, transform.localScale.y / 5f, transform.localScale.z / 5f);
-                    myText.text = myInfo.GetLocation() + 1 + ". " + myInfo.text;
+                    this.transform.localPosition = Vector3.Lerp(new Vector3(0, 0, 0), nextPosition, lerpValue * 2);
+                    this.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), myInfo.scale * sizeScale, lerpValue * 2);
+                    myText.transform.localScale = Vector3.Lerp(new Vector3(0, 0, 0), myInfo.scale * (1 - sizeScale + 1), lerpValue * 2);
+
                 }
-                else
+                if (currentTime >= myInfo.entryTime)
                 {
-                    this.transform.localRotation = Quaternion.Euler(myInfo.rotation.x - 90, myInfo.rotation.y, myInfo.rotation.z + 180);
+                    this.transform.localScale = myInfo.scale * sizeScale;
+                    myText.transform.localScale = myInfo.scale * (1 - sizeScale + 1);
+                    if (myInfo is PlayerResponse)
+                    {
+                        this.transform.localPosition = nextPosition;
+                        this.transform.localRotation = Quaternion.Euler(myInfo.rotation.x - 90, myInfo.rotation.y + 270, myInfo.rotation.z + 90);
+                        this.transform.localScale = new Vector3(transform.localScale.x / 5f, transform.localScale.y / 5f, transform.localScale.z / 5f);
+                        myText.text = myInfo.GetLocation() + 1 + ". " + myInfo.text;
+                    }
+                    else
+                    {
+                        this.transform.localRotation = Quaternion.Euler(myInfo.rotation.x - 90, myInfo.rotation.y, myInfo.rotation.z + 180);
+                    }
+
+                    initialForward = -transform.forward;
+                    audioPlayer.Play();
+                    inView = true;
                 }
-                audioPlayer.Play();
-                inView = true;
+                return;
             }
-            return;
         }
-
-        timeActive += Time.deltaTime;
     }
 
     public void SetTextPrefab(GameObject prefab)
@@ -69,6 +93,8 @@ public class DialogueBubbleDisplay : MonoBehaviour
 
     public void SetInfo(DialogueBubble info, Vector3 posToAdd, AudioClip clip)
     {
+        isResponse = info is PlayerResponse;
+        textIndex = 0;
         myInfo = info;
         nextPosition = posToAdd;
         this.transform.localScale = new Vector3(0, 0, 0);
@@ -82,6 +108,7 @@ public class DialogueBubbleDisplay : MonoBehaviour
         {
             this.transform.localRotation = Quaternion.Euler(myInfo.rotation.x - 90, myInfo.rotation.y + 270, myInfo.rotation.z + 90);
             myText.text = myInfo.text;
+            myText.fontStyle = FontStyles.Italic;
         }
         else
         {
@@ -93,6 +120,15 @@ public class DialogueBubbleDisplay : MonoBehaviour
         Material mat = gameObject.GetComponent<MeshRenderer>().material;
         mat.color = new Color(myInfo.backgroundColor.x, myInfo.backgroundColor.y, myInfo.backgroundColor.z);
         mat.mainTexture = AssetLoader.GetBubble(myInfo.backgroundTexture);
+
+        int sizeIndex = 0;/*
+        if (myInfo.text.Length <= 20)
+            sizeIndex = 1;
+        else if (myInfo.text.Length <= 10)
+            sizeIndex = 2;*/
+
+        sizeScale = sizes[sizeIndex];
+
     }
 
     public bool IsInView()
@@ -109,10 +145,23 @@ public class DialogueBubbleDisplay : MonoBehaviour
     {
         myText.text = "";
         currentTime = 0;
-        timeActive = 0;
         myInfo = null;
         inView = false;
         transform.parent = null;
         transform.localPosition = new Vector3(0, -1000, 0);
+    }
+
+    void ResponseAnimate()
+    {
+        animationTimer += Time.deltaTime;
+        if(animationTimer >= .75f)
+        {
+            animationTimer = 0;
+            rotatingClockwise = !rotatingClockwise;
+        }
+        if (rotatingClockwise)
+            transform.Rotate(initialForward, Time.deltaTime * 5.0f);
+        else
+            transform.Rotate(initialForward, -Time.deltaTime * 5.0f);
     }
 }

@@ -147,7 +147,7 @@ public class ToolManager : MonoBehaviour
         newDisplay.SetDialogueBox(box);
         newDisplay.transform.SetParent(boxPanel.transform);
 
-        newDisplay.transform.localPosition = new Vector3(-285 + (box.GetID() * 130), 125 + ((int)(box.GetID() / 5) * 200), 0);
+        newDisplay.transform.localPosition = new Vector3(-285 + ((box.GetID() % 5) * 130), 125 + ((int)(box.GetID() / 5) * -67.5f), 0);
 
         newDisplay.SetDeleteMethod(DeleteDialogueBox);
     }
