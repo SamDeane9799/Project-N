@@ -31,7 +31,6 @@ public class DialogueBubbleDisplay : MonoBehaviour
         myText = Instantiate<GameObject>(textPrefab, transform).GetComponent<TextMeshPro>();
         myText.transform.localPosition = new Vector3(0, .5f, 0);
         myText.transform.localRotation = Quaternion.AngleAxis(90, new Vector3(1, 0, 0));
-        myText.rectTransform.sizeDelta = new Vector2(10, 10);
     }
 
     // Update is called once per frame
@@ -71,6 +70,7 @@ public class DialogueBubbleDisplay : MonoBehaviour
                         this.transform.localRotation = Quaternion.Euler(myInfo.rotation.x - 90, myInfo.rotation.y + 270, myInfo.rotation.z + 90);
                         this.transform.localScale = new Vector3(transform.localScale.x / 5f, transform.localScale.y / 5f, transform.localScale.z / 5f);
                         myText.text = myInfo.GetLocation() + 1 + ". " + myInfo.text;
+                        audioPlayer.Play();
                     }
                     else
                     {
@@ -78,7 +78,6 @@ public class DialogueBubbleDisplay : MonoBehaviour
                     }
 
                     initialForward = -transform.forward;
-                    audioPlayer.Play();
                     inView = true;
                 }
                 return;
@@ -114,11 +113,12 @@ public class DialogueBubbleDisplay : MonoBehaviour
         {
             this.transform.localRotation = Quaternion.Euler(myInfo.rotation.x - 90, myInfo.rotation.y, myInfo.rotation.z + 180);
             myText.text = "";
+            audioPlayer.Play();
         }
 
         myText.color = new Color(myInfo.textColor.x, myInfo.textColor.y, myInfo.textColor.z);
         Material mat = gameObject.GetComponent<MeshRenderer>().material;
-        mat.color = new Color(myInfo.backgroundColor.x, myInfo.backgroundColor.y, myInfo.backgroundColor.z);
+        mat.color = new Color(myInfo.backgroundColor.x, myInfo.backgroundColor.y, myInfo.backgroundColor.z, 1);
         mat.mainTexture = AssetLoader.GetBubble(myInfo.backgroundTexture);
 
         int sizeIndex = 0;/*

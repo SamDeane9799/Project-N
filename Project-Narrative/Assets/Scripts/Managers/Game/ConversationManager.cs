@@ -46,7 +46,7 @@ public static class ConversationManager
     new Vector3(-15, 0, 0), new Vector3(-10f, 7.5f, 0) };
     private static Vector3[] responsePositions = {
     new Vector3(-1, 5f, 5), new Vector3(1, 5f, 5),
-    new Vector3(-1, 2.5f, 5), new Vector3(1, 2.5f, 5)};
+    new Vector3(-1, 3.5f, 5), new Vector3(1, 3.5f, 5)};
 
 
     public static void Init(GameObject TextPrefab, Material mat, AudioClip clip)

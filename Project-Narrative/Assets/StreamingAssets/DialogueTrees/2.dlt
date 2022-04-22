@@ -16,10 +16,10 @@
         "child": "001",
         "text": "Busy? I was just here to admire your work! But, I can leave... I guess...",
         "background_texture": "response",
-        "background_color": "256, 256, 256",
+        "background_color": "20.0, 20.0, 8.0",
         "background_animation": "0",
         "text_animation": "0",
-        "text_color": ".8, .8, .8",
+        "text_color": ".5, .5, .5",
         "scale": ".75, .75, .75",
         "rotation": "0, 0, 0",
         "entry_time": 2
@@ -29,13 +29,13 @@
         "trait": "abrasive",
         "is_interrupt": "false,0",
         "type": "professional",
-        "child": "-1",
+        "child": "007",
         "text": "This is the 7th time. You know why I'm here.",
         "background_texture": "response",
-        "background_color": "256, 256, 256",
+        "background_color": "8.0, 8.0, 20.0",
         "background_animation": "0",
         "text_animation": "0",
-        "text_color": ".8, .8, .8",
+        "text_color": ".5, .5, .5",
         "scale": ".75, .75, .75",
         "rotation": "0, 0, 0",
         "entry_time": 2
@@ -45,44 +45,45 @@
         "trait": "abrasive",
         "is_interrupt": "false,0",
         "type": "professional",
-        "child": "-1",
+        "child": "13",
         "text": "Doesn't look important to me...",
         "background_texture": "response",
-        "background_color": "256, 256, 256",
+        "background_color": "20.0, 8.0, 8.0",
         "background_animation": "0",
         "text_animation": "0",
-        "text_color": ".8, .8, .8",
+        "text_color": ".5, .5, .5",
         "scale": ".75, .75, .75",
         "rotation": "0, 0, 0",
         "entry_time": 2
       }
-      ],
+    ],
     "phrases": [
-    [
-      {
+      [
+        {
           "text": "What are you here for?",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "7",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
-        },{
+        },
+        {
           "text": "I'm BUSY",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "1",
           "scale": "1.2, 1.2, 1.2",
           "rotation": "0, 0, 0",
           "entry_time": 1
         }
-    ]
+      ]
     ]
   },
   {
@@ -111,7 +112,7 @@
         "trait": "abrasive",
         "is_interrupt": "false,0",
         "type": "professional",
-        "child": "-1",
+        "child": "14",
         "text": "Inventions? You're proud of these junk piles?",
         "background_texture": "response",
         "background_color": "256, 256, 256",
@@ -123,22 +124,24 @@
         "entry_time": 2
       }
     ],
-    "phrases": [ [
-      {
+    "phrases": [
+      [
+        {
           "text": "Oh.",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "0",
           "scale": ".6, .6, .6",
           "rotation": "0, 0, 0",
           "entry_time": 2
-        },{
+        },
+        {
           "text": "Well.",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
           "text_color": "0, 0, 1",
@@ -147,39 +150,41 @@
           "rotation": "0, 0, 0",
           "entry_time": 2
         }
-    ],
-    [
-      {
+      ],
+      [
+        {
           "text": "Here to marvel at my...",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "7",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
-        },{
+        },
+        {
           "text": "GLORY",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "10.0, 8.0, 0",
           "location": "0",
           "scale": "1.5, 1.5, 1.5",
           "rotation": "0, 0, 0",
           "entry_time": 3
         }
-    ]
+      ]
     ]
   },
   {
     "id": 2,
     "entry_time": 2,
     "animation_id": -1,
-    "responses": [{
+    "responses": [
+      {
         "priority": "10",
         "trait": "abrasive",
         "is_interrupt": "false,0",
@@ -200,7 +205,7 @@
         "trait": "abrasive",
         "is_interrupt": "false,0",
         "type": "professional",
-        "child": "001",
+        "child": "015",
         "text": "Riiiiight. Why don't you start trying to explain why I have 9... no 10... actually 15 complaints from your employer?",
         "background_texture": "response",
         "background_color": "256, 256, 256",
@@ -210,61 +215,67 @@
         "scale": ".75, .75, .75",
         "rotation": "0, 0, 0",
         "entry_time": 2
-      }],
-    "phrases": [ [
-      {
+      }
+    ],
+    "phrases": [
+      [
+        {
           "text": "Yes, yes.",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "7",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
-        },{
+        },
+        {
           "text": "Well I could explain my portfolio to you...",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "1",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 4
-        },{
+        },
+        {
           "text": "But honestly, you wouldn't get it.",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "2",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
-        },{
+        },
+        {
           "text": "Not many would.",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "3",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 1
         }
-    ]
+      ]
     ]
   },
   {
     "id": 3,
     "entry_time": 2,
     "animation_id": -1,
-    "responses": [{
+    "responses": [
+      {
         "priority": "10",
         "trait": "abrasive",
         "is_interrupt": "false,0",
@@ -279,51 +290,55 @@
         "scale": ".75, .75, .75",
         "rotation": "0, 0, 0",
         "entry_time": 2
-      }],
+      }
+    ],
     "phrases": [
-       [
-      {
+      [
+        {
           "text": "Welllll, you wouldn't really understand",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "6",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
-        },{
+        },
+        {
           "text": "BUT",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "0",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 1
-        },{
+        },
+        {
           "text": "Someone like you might have fun using it smash things!",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "2",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
         }
-    ]
+      ]
     ]
   },
   {
     "id": 4,
     "entry_time": 2,
     "animation_id": -1,
-    "responses": [{
+    "responses": [
+      {
         "priority": "10",
         "trait": "abrasive",
         "is_interrupt": "false,0",
@@ -344,7 +359,7 @@
         "trait": "abrasive",
         "is_interrupt": "false,0",
         "type": "professional",
-        "child": "001",
+        "child": "017",
         "text": "HAHAH you are such an idiot...",
         "background_texture": "response",
         "background_color": "256, 256, 256",
@@ -354,40 +369,43 @@
         "scale": ".75, .75, .75",
         "rotation": "0, 0, 0",
         "entry_time": 2
-      }],
+      }
+    ],
     "phrases": [
-       [
-      {
+      [
+        {
           "text": "How about I leave that as a....",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "7",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 3
-        },{
+        },
+        {
           "text": "MYSTERY!",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "0",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 1
         }
-    ]
+      ]
     ]
   },
   {
     "id": 5,
     "entry_time": 2,
     "animation_id": -1,
-    "responses": [{
+    "responses": [
+      {
         "priority": "10",
         "trait": "abrasive",
         "is_interrupt": "false,0",
@@ -402,119 +420,125 @@
         "scale": ".75, .75, .75",
         "rotation": "0, 0, 0",
         "entry_time": 2
-      }],
+      }
+    ],
     "phrases": [
-       [
-      {
+      [
+        {
           "text": "Hmmmm wait...",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "0",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
-        },{
+        },
+        {
           "text": "you might...",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "7",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
-        },{
+        },
+        {
           "text": "just might...",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "1",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
-        },{
+        },
+        {
           "text": "be on to something...",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "3",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
         }
-    ]
+      ]
     ]
   },
   {
     "id": 6,
     "entry_time": 2,
     "animation_id": -1,
-    "responses": [
-    ],
+    "responses": [],
     "phrases": [
-       [
-      {
+      [
+        {
           "text": "ALL RIGHT!",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "6",
           "scale": "1.2, 1.2, 1.2",
           "rotation": "0, 0, 0",
           "entry_time": 2
-        },{
+        },
+        {
           "text": "THEY'LL FINALLY STOP WITH THESE...",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "1",
           "scale": "1.2, 1.2, 1.2",
           "rotation": "0, 0, 0",
           "entry_time": 3
-        },{
+        },
+        {
           "text": "STUPID...",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "7",
           "scale": "1.2, 1.2, 1.2",
           "rotation": "0, 0, 0",
           "entry_time": 1
-        },{
+        },
+        {
           "text": "INSPECTIONS AND RULES!",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "0",
           "scale": "1.2, 1.2, 1.2",
           "rotation": "0, 0, 0",
           "entry_time": 2
         }
-    ],
-    [
-      {
+      ],
+      [
+        {
           "text": "HAHAHAHAHAHAHAHAHA",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "0",
           "scale": "1.5, 1.5, 1.5",
           "rotation": "0, 0, 0",
@@ -523,82 +547,88 @@
         {
           "text": "HAHAHAHAHAHAHAHAHA",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "1",
           "scale": "1.5, 1.5, 1.5",
           "rotation": "0, 0, 0",
           "entry_time": 1
-        },{
+        },
+        {
           "text": "HAHAHAHAHAHAHAHAHA",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "2",
           "scale": "1.5, 1.5, 1.5",
           "rotation": "0, 0, 0",
           "entry_time": 1
-        },{
+        },
+        {
           "text": "HAHAHAHAHAHAHAHAHA",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "3",
           "scale": "1.5, 1.5, 1.5",
           "rotation": "0, 0, 0",
           "entry_time": 1
-        },{
+        },
+        {
           "text": "HAHAHAHAHAHAHAHAHA",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "4",
           "scale": "1.5, 1.5, 1.5",
           "rotation": "0, 0, 0",
           "entry_time": 1
-        },{
+        },
+        {
           "text": "HAHAHAHAHAHAHAHAHA",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "5",
           "scale": "1.5, 1.5, 1.5",
           "rotation": "0, 0, 0",
           "entry_time": 1
-        },{
+        },
+        {
           "text": "HAHAHAHAHAHAHAHAHA",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "6",
           "scale": "1.5, 1.5, 1.5",
           "rotation": "0, 0, 0",
           "entry_time": 1
-        },{
+        },
+        {
           "text": "HAHAHAHAHAHAHAHAHA",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "7",
           "scale": "1.5, 1.5, 1.5",
           "rotation": "0, 0, 0",
           "entry_time": 1
         }
-    ]
+      ]
     ]
   },
   {
@@ -611,8 +641,24 @@
         "trait": "abrasive",
         "is_interrupt": "false,0",
         "type": "professional",
-        "child": "001",
-        "text": "",
+        "child": "008",
+        "text": "Yeah, it's impressive how yo seem to never be able to meet our demands huh?",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "002",
+        "text": "Your genius? Please enlighten me!",
         "background_texture": "response",
         "background_color": "256, 256, 256",
         "background_animation": "0",
@@ -628,39 +674,7 @@
         "is_interrupt": "false,0",
         "type": "professional",
         "child": "001",
-        "text": "",
-        "background_texture": "response",
-        "background_color": "256, 256, 256",
-        "background_animation": "0",
-        "text_animation": "0",
-        "text_color": ".8, .8, .8",
-        "scale": ".75, .75, .75",
-        "rotation": "0, 0, 0",
-        "entry_time": 2
-      },
-      {
-        "priority": "10",
-        "trait": "abrasive",
-        "is_interrupt": "false,0",
-        "type": "professional",
-        "child": "001",
-        "text": "",
-        "background_texture": "response",
-        "background_color": "256, 256, 256",
-        "background_animation": "0",
-        "text_animation": "0",
-        "text_color": ".8, .8, .8",
-        "scale": ".75, .75, .75",
-        "rotation": "0, 0, 0",
-        "entry_time": 2
-      },
-      {
-        "priority": "10",
-        "trait": "abrasive",
-        "is_interrupt": "false,0",
-        "type": "professional",
-        "child": "001",
-        "text": "",
+        "text": "They'll really let anyone be an engineer these days...",
         "background_texture": "response",
         "background_color": "256, 256, 256",
         "background_animation": "0",
@@ -672,78 +686,44 @@
       }
     ],
     "phrases": [
-       [
-      {
-          "text": "",
+      [
+        {
+          "text": "YOU??",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "1",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
-        },{
-          "text": "",
+        },
+        {
+          "text": "You don't appreciate my...",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
+          "text_color": "0, 0, 0",
+          "location": "7",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
-          "entry_time": 2
-        },{
-          "text": "",
+          "entry_time": 3
+        },
+        {
+          "text": "my GENIUS",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
+          "text_color": "0, 0, 0",
+          "location": "0",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
-          "entry_time": 2
+          "entry_time": 1
         }
-    ],
-    [
-      {
-          "text": "",
-          "background_texture": "bubble",
-          "background_color": "0, 0, 0",
-          "background_animation": "0",
-          "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
-          "scale": "1, 1, 1",
-          "rotation": "0, 0, 0",
-          "entry_time": 2
-        },{
-          "text": "",
-          "background_texture": "bubble",
-          "background_color": "0, 0, 0",
-          "background_animation": "0",
-          "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
-          "scale": "1, 1, 1",
-          "rotation": "0, 0, 0",
-          "entry_time": 2
-        },{
-          "text": "",
-          "background_texture": "bubble",
-          "background_color": "0, 0, 0",
-          "background_animation": "0",
-          "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
-          "scale": "1, 1, 1",
-          "rotation": "0, 0, 0",
-          "entry_time": 2
-        }
-    ]
+      ]
     ]
   },
   {
@@ -756,8 +736,8 @@
         "trait": "abrasive",
         "is_interrupt": "false,0",
         "type": "professional",
-        "child": "001",
-        "text": "",
+        "child": "014",
+        "text": "Great, maybe you'll live long enough to do some self-reflection",
         "background_texture": "response",
         "background_color": "256, 256, 256",
         "background_animation": "0",
@@ -772,40 +752,8 @@
         "trait": "abrasive",
         "is_interrupt": "false,0",
         "type": "professional",
-        "child": "001",
-        "text": "",
-        "background_texture": "response",
-        "background_color": "256, 256, 256",
-        "background_animation": "0",
-        "text_animation": "0",
-        "text_color": ".8, .8, .8",
-        "scale": ".75, .75, .75",
-        "rotation": "0, 0, 0",
-        "entry_time": 2
-      },
-      {
-        "priority": "10",
-        "trait": "abrasive",
-        "is_interrupt": "false,0",
-        "type": "professional",
-        "child": "001",
-        "text": "",
-        "background_texture": "response",
-        "background_color": "256, 256, 256",
-        "background_animation": "0",
-        "text_animation": "0",
-        "text_color": ".8, .8, .8",
-        "scale": ".75, .75, .75",
-        "rotation": "0, 0, 0",
-        "entry_time": 2
-      },
-      {
-        "priority": "10",
-        "trait": "abrasive",
-        "is_interrupt": "false,0",
-        "type": "professional",
-        "child": "001",
-        "text": "",
+        "child": "009",
+        "text": "Wow, do you think you'll finish that before your engineering permit is revoked?",
         "background_texture": "response",
         "background_color": "256, 256, 256",
         "background_animation": "0",
@@ -817,78 +765,58 @@
       }
     ],
     "phrases": [
-       [
-      {
-          "text": "",
+      [
+        {
+          "text": "Soon...",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
+          "text_color": "0, 0, 0",
           "location": "1",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
-        },{
-          "text": "",
+        },
+        {
+          "text": "I'll make myself immortal",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
-          "scale": "1, 1, 1",
-          "rotation": "0, 0, 0",
-          "entry_time": 2
-        },{
-          "text": "",
-          "background_texture": "bubble",
-          "background_color": "0, 0, 0",
-          "background_animation": "0",
-          "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
+          "text_color": "0, 0, 0",
+          "location": "7",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
         }
-    ],
-    [
-      {
-          "text": "",
+      ],
+      [
+        {
+          "text": "Then, maybe!",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
+          "text_color": "0, 0, 0",
+          "location": "0",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
-          "entry_time": 2
-        },{
-          "text": "",
+          "entry_time": 3
+        },
+        {
+          "text": "I'll have time to make some silly mundane contraptions",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
-          "scale": "1, 1, 1",
-          "rotation": "0, 0, 0",
-          "entry_time": 2
-        },{
-          "text": "",
-          "background_texture": "bubble",
-          "background_color": "0, 0, 0",
-          "background_animation": "0",
-          "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
+          "text_color": "0, 0, 0",
+          "location": "7",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
         }
-    ]
+      ]
     ]
   },
   {
@@ -901,8 +829,8 @@
         "trait": "abrasive",
         "is_interrupt": "false,0",
         "type": "professional",
-        "child": "001",
-        "text": "",
+        "child": "016",
+        "text": "Why don't you do something useful for once in your life?",
         "background_texture": "response",
         "background_color": "256, 256, 256",
         "background_animation": "0",
@@ -917,40 +845,8 @@
         "trait": "abrasive",
         "is_interrupt": "false,0",
         "type": "professional",
-        "child": "001",
-        "text": "",
-        "background_texture": "response",
-        "background_color": "256, 256, 256",
-        "background_animation": "0",
-        "text_animation": "0",
-        "text_color": ".8, .8, .8",
-        "scale": ".75, .75, .75",
-        "rotation": "0, 0, 0",
-        "entry_time": 2
-      },
-      {
-        "priority": "10",
-        "trait": "abrasive",
-        "is_interrupt": "false,0",
-        "type": "professional",
-        "child": "001",
-        "text": "",
-        "background_texture": "response",
-        "background_color": "256, 256, 256",
-        "background_animation": "0",
-        "text_animation": "0",
-        "text_color": ".8, .8, .8",
-        "scale": ".75, .75, .75",
-        "rotation": "0, 0, 0",
-        "entry_time": 2
-      },
-      {
-        "priority": "10",
-        "trait": "abrasive",
-        "is_interrupt": "false,0",
-        "type": "professional",
-        "child": "001",
-        "text": "",
+        "child": "010",
+        "text": "I'm writing you up",
         "background_texture": "response",
         "background_color": "256, 256, 256",
         "background_animation": "0",
@@ -962,78 +858,70 @@
       }
     ],
     "phrases": [
-       [
-      {
-          "text": "",
+      [
+        {
+          "text": "I don't care about your",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
+          "text_color": "0, 0, 0",
+          "location": "7",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
-        },{
-          "text": "",
+        },
+        {
+          "text": "urgh STUPID rules",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
+          "text_color": "0, 0, 0",
+          "location": "0",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
-          "entry_time": 2
-        },{
-          "text": "",
+          "entry_time": 1
+        }
+      ],
+      [
+        {
+          "text": "I",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
-          "scale": "1, 1, 1",
+          "text_color": "0, 0, 0",
+          "location": "2",
+          "scale": "1.3, 1.3, 1.3",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },
+        {
+          "text": "DO",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "6",
+          "scale": "1.3, 1.3, 1.3",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },
+        {
+          "text": "WHAT I WANT",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "0",
+          "scale": "1.3, 1.3, 1.3",
           "rotation": "0, 0, 0",
           "entry_time": 2
         }
-    ],
-    [
-      {
-          "text": "",
-          "background_texture": "bubble",
-          "background_color": "0, 0, 0",
-          "background_animation": "0",
-          "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
-          "scale": "1, 1, 1",
-          "rotation": "0, 0, 0",
-          "entry_time": 2
-        },{
-          "text": "",
-          "background_texture": "bubble",
-          "background_color": "0, 0, 0",
-          "background_animation": "0",
-          "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
-          "scale": "1, 1, 1",
-          "rotation": "0, 0, 0",
-          "entry_time": 2
-        },{
-          "text": "",
-          "background_texture": "bubble",
-          "background_color": "0, 0, 0",
-          "background_animation": "0",
-          "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
-          "scale": "1, 1, 1",
-          "rotation": "0, 0, 0",
-          "entry_time": 2
-        }
-    ]
+      ]
     ]
   },
   {
@@ -1046,8 +934,8 @@
         "trait": "abrasive",
         "is_interrupt": "false,0",
         "type": "professional",
-        "child": "001",
-        "text": "",
+        "child": "017",
+        "text": "Get on your knees and beg",
         "background_texture": "response",
         "background_color": "256, 256, 256",
         "background_animation": "0",
@@ -1062,8 +950,8 @@
         "trait": "abrasive",
         "is_interrupt": "false,0",
         "type": "professional",
-        "child": "001",
-        "text": "",
+        "child": "011",
+        "text": "This time? You have more than you could ever think to make up for.",
         "background_texture": "response",
         "background_color": "256, 256, 256",
         "background_animation": "0",
@@ -1078,24 +966,8 @@
         "trait": "abrasive",
         "is_interrupt": "false,0",
         "type": "professional",
-        "child": "001",
-        "text": "",
-        "background_texture": "response",
-        "background_color": "256, 256, 256",
-        "background_animation": "0",
-        "text_animation": "0",
-        "text_color": ".8, .8, .8",
-        "scale": ".75, .75, .75",
-        "rotation": "0, 0, 0",
-        "entry_time": 2
-      },
-      {
-        "priority": "10",
-        "trait": "abrasive",
-        "is_interrupt": "false,0",
-        "type": "professional",
-        "child": "001",
-        "text": "",
+        "child": "005",
+        "text": "Why don't you show your collection to the head engineer?",
         "background_texture": "response",
         "background_color": "256, 256, 256",
         "background_animation": "0",
@@ -1107,78 +979,510 @@
       }
     ],
     "phrases": [
-       [
-      {
-          "text": "",
+      [
+        {
+          "text": "WAIT",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
-          "scale": "1, 1, 1",
+          "text_color": "0, 0, 0",
+          "location": "0",
+          "scale": "1.2, 1.2, 1.2",
           "rotation": "0, 0, 0",
-          "entry_time": 2
-        },{
-          "text": "",
+          "entry_time": 1
+        },
+        {
+          "text": "Ok what do I have to do this time?",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
-          "scale": "1, 1, 1",
-          "rotation": "0, 0, 0",
-          "entry_time": 2
-        },{
-          "text": "",
-          "background_texture": "bubble",
-          "background_color": "0, 0, 0",
-          "background_animation": "0",
-          "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
+          "text_color": "0, 0, 0",
+          "location": "3",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
         }
+      ]
+    ]
+  },
+  {
+    "id": 11,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [{
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "12",
+        "text": "Fine. One more chance.",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      }],
+    "phrases": [ 
+      [
+        {
+          "text": "FINE FINE PLEASE.",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "0",
+          "scale": "1.2, 1.2, 1.2",
+          "rotation": "0, 0, 0",
+          "entry_time": 1
+        },
+        {
+          "text": "I'll do it",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 1
+        },
+        {
+          "text": "I swear",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "7",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 1
+        },
+        {
+          "text": "I swear this time.",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "3",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+      ]
+      ]
+  },
+  {
+    "id": 12,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [
+      ],
+    "phrases": [[
+        {
+          "text": "Thank you",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "0",
+          "scale": "1.2, 1.2, 1.2",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },
+        {
+          "text": "I'll make this ventilator",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "2",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },
+        {
+          "text": "Just for you",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "6",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 3
+        }
+      ]]
+  },
+  {
+    "id": 13,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "014",
+        "text": "Really? Is that something to say to the person inspecting your mess?",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "002",
+        "text": "Ugh you're right. Please enlighten us with your genius.",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "008",
+        "text": "Right is that why you can't put a simple ventilation pipe together LIKE WE ASKED???",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      }
     ],
-    [
-      {
-          "text": "",
+    "phrases": [[
+        {
+          "text": "Like YOU would know anything.",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
-          "scale": "1, 1, 1",
+          "text_color": "0, 0, 0",
+          "location": "2",
+          "scale": "1.2, 1.2, 1.2",
           "rotation": "0, 0, 0",
           "entry_time": 2
-        },{
-          "text": "",
+        },
+        {
+          "text": "You uneducated mongrel",
           "background_texture": "bubble",
-          "background_color": "0, 0, 0",
+          "background_color": "1.0, 1.0, 1.0",
           "background_animation": "0",
           "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
-          "scale": "1, 1, 1",
-          "rotation": "0, 0, 0",
-          "entry_time": 2
-        },{
-          "text": "",
-          "background_texture": "bubble",
-          "background_color": "0, 0, 0",
-          "background_animation": "0",
-          "text_animation": "0",
-          "text_color": "256, 256, 256",
-          "location": "1",
+          "text_color": "0, 0, 0",
+          "location": "6",
           "scale": "1, 1, 1",
           "rotation": "0, 0, 0",
           "entry_time": 2
         }
-    ]
-    ]
+      ]]
+  },
+  {
+    "id": 14,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "015",
+        "text": "You're making a mess. There I corrected it for you.",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "009",
+        "text": "We both know what happens to uncooperative engineers.",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "003",
+        "text": "Oh you made these? Mind telling me how this hammer works?",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      }
+    ],
+    "phrases": [[
+        {
+          "text": "Hm I wonder why ",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "2",
+          "scale": "1.2, 1.2, 1.2",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },
+        {
+          "text": "I'M",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "0",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 1
+        },
+        {
+          "text": "the one making inventions and you're the one inspecting them?",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "6",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+      ]]
+  },
+  {
+    "id": 15,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "016",
+        "text": "Maybe I can throw you in there with all the time I wasted TALKING TO YOU!",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "010",
+        "text": "You're right, I should just leave and get your permit revoked.",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      }
+    ],
+    "phrases": [[
+        {
+          "text": "Oh inspector",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "2",
+          "scale": "1.0, 1.0, 1.0",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },
+        {
+          "text": "people like you love to throw time in the trash!",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "6",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+      ]]
+  },
+  {
+    "id": 16,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "011",
+        "text": "I'm really going to leave and report you this time. I gave you too many second chances already.",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      },
+      {
+        "priority": "10",
+        "trait": "abrasive",
+        "is_interrupt": "false,0",
+        "type": "professional",
+        "child": "017",
+        "text": "I'll stop insulting you when you make something worth my time",
+        "background_texture": "response",
+        "background_color": "256, 256, 256",
+        "background_animation": "0",
+        "text_animation": "0",
+        "text_color": ".8, .8, .8",
+        "scale": ".75, .75, .75",
+        "rotation": "0, 0, 0",
+        "entry_time": 2
+      }
+    ],
+    "phrases": [[
+        {
+          "text": "Got anymore insults?",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "2",
+          "scale": "1.0, 1.0, 1.0",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },
+        {
+          "text": "I don't have all day",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "6",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        }
+      ]]
+  },
+  {
+    "id": 17,
+    "entry_time": 2,
+    "animation_id": -1,
+    "responses": [],
+    "phrases": [[
+        {
+          "text": "All right.",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "3",
+          "scale": "1.2, 1.2, 1.2",
+          "rotation": "0, 0, 0",
+          "entry_time": 3
+        },
+        {
+          "text": "Now get out",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "5",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 0",
+          "entry_time": 2
+        },
+        {
+          "text": "before I",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "1",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, -30",
+          "entry_time": 2
+        },
+        {
+          "text": "report YOU",
+          "background_texture": "bubble",
+          "background_color": "1.0, 1.0, 1.0",
+          "background_animation": "0",
+          "text_animation": "0",
+          "text_color": "0, 0, 0",
+          "location": "7",
+          "scale": "1, 1, 1",
+          "rotation": "0, 0, 30",
+          "entry_time": 2
+        }
+      ]]
   }
 ]
