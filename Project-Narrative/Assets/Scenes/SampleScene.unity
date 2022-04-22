@@ -7437,7 +7437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca589ed3fef683d4cbddd7b7247323b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.1060925
+      value: 8.61
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca589ed3fef683d4cbddd7b7247323b5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7879,7 +7879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c5face1313cddb94fb5357d00f317500, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.37
+      value: 14.87
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c5face1313cddb94fb5357d00f317500, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7916,6 +7916,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c5face1313cddb94fb5357d00f317500, type: 3}
       propertyPath: m_Name
       value: pipe_wide_l_shape
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c5face1313cddb94fb5357d00f317500, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5face1313cddb94fb5357d00f317500, type: 3}
@@ -13330,7 +13334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2926384982105918943, guid: db7824414f0505341b02170a563c0ed9, type: 3}
       propertyPath: treeID
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2926384982105918943, guid: db7824414f0505341b02170a563c0ed9, type: 3}
       propertyPath: npcName
