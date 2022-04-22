@@ -12,7 +12,17 @@ ModelImporter:
   - first:
       74: -6802528354786795707
     second: oxyle_skeleton|oxyle_idle
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: oxyle_base_eyes_mat
+    second: {fileID: 2100000, guid: de835350c35de214f8549d2a394909c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: oxyle_base_mat
+    second: {fileID: 2100000, guid: 199220fbb26dda24891177a7f0783c9e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
